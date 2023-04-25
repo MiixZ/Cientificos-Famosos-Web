@@ -1,0 +1,175 @@
+html {
+    background-color: beige;
+    margin: 0.1rem;
+}
+
+/* ----------------------- CABECERA -------------------------------- */
+
+.cabecera {
+    display: flex;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding: 0.5%;
+    height: 1%;
+    background-image: url("../img/header_img.jpg");
+}
+
+.titulo_pagina {
+    display: flex;
+    padding-left: 20%;
+    font-style: italic;
+    color: navajowhite;
+    font-size: 30px;
+    align-items: center;
+}
+
+.texto_cabecera {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.menus {
+    display: flex;
+    font-family: "Comic Sans MS", cursive;
+    color: orange;
+    width: 100%;
+    padding-left: 15%;
+}
+
+.menu_text {
+    padding-right: 1%;
+    padding-left: 5%;
+    font-family: "Arial Black", cursive;
+    text-decoration: none;
+    color: orange;
+}
+
+.imagen_cabecera {
+    width: 7rem;
+    align-items: center;
+}
+
+.imagen_cabecera_ {
+    width: 7rem;
+}
+
+/* ----------------------- SECCIÓN PRINCIPAL -------------------------------- */
+
+.main_pagina {
+    display: flex;
+}
+
+.main_section {
+    display: flex;
+    padding: 0.5%;
+}
+
+.seccion_cientificos {
+    width: 80%;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding-right: 0.5%;
+    background-image: url("../img/cientifico_background.jpg");
+    background-size: 100%;
+}
+
+.cientificos {
+    display: flex;
+}
+
+.cientificos_ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.foto_cientifico {
+    padding: 0.2rem;
+    width: 14rem;
+    height: 15rem;
+}
+
+.foto_cientifico:hover {
+    border-style: solid;
+    border-color: orangered;
+    background-color: red;
+}
+
+.pie_cientifico {
+    font-family: "Comic Sans MS", cursive;
+    color: black;
+    text-decoration: none;
+    padding-bottom: 4%;
+}
+
+.pie_cientifico:hover {
+    font-family: "Arial Black", cursive;
+    color: orange;
+    padding-bottom: 4%;
+}
+
+.seccion_enlaces {
+    width: 20%;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding-left: 0.5%;
+    background-image: url("../img/cientifico_background.jpg");
+    background-size: 100%;
+}
+
+.titulo_enlaces {
+    align-content: center;
+    width: 100%;
+    color: darkblue;
+}
+
+.enlace {
+    font-family: "Comic Sans MS", cursive;
+    color: black;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    font-family: "Comic Sans MS", cursive;
+    color: purple;
+    font-size: 18px;
+}
+
+/* ----------------------- PIE PÁGINA -------------------------------- */
+
+.pie_pagina {
+    display: flex;
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding: 0.5%;
+}
+
+.imagenpie {
+    width: 7rem;
+    height: 7rem;
+    padding: 0.5%;
+    text-align: right;
+}
+
+.texto_pie {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------- GENERAL -------------------------------- */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    border-radius: 150px;
+}

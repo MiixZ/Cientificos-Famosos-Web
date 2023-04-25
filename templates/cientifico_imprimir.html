@@ -1,0 +1,33 @@
+{% extends "header_footer.html" %}
+  {% block especificar_head %}
+    <title>Imprimir Científico</title>
+    <link rel="stylesheet" href="./css/cientifico_imprimir.css"/> <!-- Con esto decimos el archivo css
+                  que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+  {% endblock %}
+
+  {% block main %}
+    <section class="seccion_cientificos">
+      <section class="texto_cientifico">
+        <h1>    {{ cientifico['nombre'] }}    </h1>
+        <h2>    {{ cientifico['fechas'] }}       </h2>
+        <h3>    {{ cientifico['ciudad'] }}    </h3>
+
+        <p class="biografia">
+            {{ cientifico['texto'] }}
+        </p>
+
+        <section class="buttons">
+          <button> <a class="text_button" href=""> FB </a> </button>
+          <button> <a class="text_button" href=""> TW </a> </button>
+          <button> <a class="text_button" href=""> IMPRIMIR </a> </button>
+        </section>
+
+      </section>
+
+      <section class="imagenes_cientifico">
+        {% for foto in fotosCientifico %}
+          <img class="foto_cientifico" src="{{ foto['ruta'] }}">
+        {% endfor %}
+      </section>
+    </section>
+  {% endblock %}

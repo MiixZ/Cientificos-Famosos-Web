@@ -1,0 +1,133 @@
+// CIENTÍFICOS
+CREATE TABLE cientifico (
+	id INT PRIMARY KEY,
+	nombre VARCHAR(100),
+	fechas VARCHAR(100),
+	ciudad VARCHAR(100),
+	texto VARCHAR(3000)
+);
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (1, 'Nikola Tesla', '10/07/1856-07/01/1943', 'NEW YORK, EE.UU',
+ 'Tesla, que nació y se crio en el Imperio austríaco, estudió ingeniería y física en la década de 1870 sin obtener un título, aunque adquirió experiencia práctica a principios de la década de 1880 trabajando en telefonía para la empresa Continental Edison, que por entonces lideraba la nueva industria de la energía eléctrica. En 1884 emigró a Estados Unidos, donde adquirió la doble nacionalidad. Trabajó durante un corto tiempo en Edison Machine Works en Nueva York antes de emprender el camino por su cuenta. Con la ayuda de socios para financiar y comercializar sus ideas, Tesla fundó laboratorios y empresas en Nueva York para desarrollar dispositivos eléctricos y mecánicos. Su motor asíncrono de corriente alterna (CA) y las patentes relacionadas con el sistema polifásico, licenciadas por Westinghouse Electric en 1888, le reportaron grandes sumas de dinero y además se convirtieron en la piedra angular del sistema polifásico finalmente comercializado por esta empresa. Tras su demostración de la comunicación inalámbrica por medio de ondas de radio en 1894 y después de su victoria en la guerra de las corrientes, se le reconoció ampliamente como uno de los más grandes ingenieros eléctricos de los Estados Unidos. Durante este periodo la fama de Tesla rivalizaba con la de cualquier inventor o científico de la historia o la cultura popular, pero debido a su personalidad excéntrica y a sus afirmaciones increíbles —a veces totalmente inverosímiles, y en ocasiones, falsas— acerca del posible desarrollo de innovaciones científicas y tecnológicas, Tesla terminó relegado al ostracismo y considerado un científico loco. Nunca prestó especial atención a sus finanzas y se dice que murió empobrecido a los 86 años.');
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (2, 'Rosalind Franklin', '25/07/1920-16/04/1958', 'Londres, UK', 'Rosalind Elsie Franklin nació el 25 de julio de 1920 en Londres, segunda de cinco hermanos, tres de ellos varones, en una familia judía que llevaba cuatro generaciones dedicada a la banca. Su educación más temprana, hasta los 18 años, la recibió en varios colegios de prestigio, incluyendo una estancia en Francia con un programa que incluía, además de costura y deporte, aula de debate y, sobre todo, física y química. Vuelve a casa y aprueba el examen de ingreso en el Colegio Newnham, en Cambridge, para estudiar ciencias experimentales y, en concreto, química. Su padre no acepta la decisión de Rosalind y le retira su asignación, pero una tía, hermana de su padre, corre con los gastos y le permite estudiar en el centro elegido. No pasó mucho tiempo sin que el padre aceptara la decisión de su hija y volviera a hacerse cargo de los gastos.');
+
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (3, 'Albert Einstein', '14/03/1879-18/04/1955', 'NEW JERSEY, EE.UU', 'En tanto que modelo explicativo completamente alejado del sentido común, la relatividad se cuenta entre aquellos avances que, en los albores del siglo XX, conducirían al divorcio entre la gente corriente y una ciencia cada vez más especializada e ininteligible. No obstante, ya en vida del físico o póstumamente, incluso los más sorprendentes e incomprensibles aspectos de la relatividad acabarían siendo confirmados. No debe extrañar, pues, que Albert Einstein sea uno de los personajes más célebres y admirados de la historia de la ciencia: saber que son ciertas tantas ideas apenas concebibles (por ejemplo, que la masa de un cuerpo aumenta con la velocidad) no deja más opción que rendirse a su genialidad. Albert Einstein nació en la ciudad alemana de Ulm el 14 de marzo de 1879. Fue el hijo primogénito de Hermann Einstein y de Pauline Koch, judíos ambos, cuyas familias procedían de Suabia. Al siguiente año se trasladaron a Munich, en donde el padre se estableció, junto con su hermano Jakob, como comerciante en las novedades electrotécnicas de la época.');
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (4, 'James Clerk Maxwell', '13/06/1831-05/11/1879', 'CAMBRIDGE, UK', 'Con tan sólo dieciséis años ingresó en la Universidad de Edimburgo, y en 1850 pasó a la Universidad de Cambridge, donde deslumbró a todos con su extraordinaria capacidad para resolver problemas relacionados con la física. Cuatro años más tarde se graduó en esta universidad, pero el deterioro de la salud de su padre le obligó a regresar a Escocia y renunciar a una plaza en el prestigioso Trinity College de Cambridge. En 1856, poco después de la muerte de su padre, fue nombrado profesor de filosofía natural en el Marischal College de Aberdeen. Dos años más tarde se casó con Katherine Mary Dewar, hija del director del Marischal College. En 1860, tras abandonar la recién instituida Universidad de Aberdeen, obtuvo el puesto de profesor de filosofía natural en el Kings College de Londres.');
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (5, 'Ludwig Boltzmann', '20/02/1844-05/09/1906', 'DUINO, ITALIA',
+ 'Nació en el seno de una familia acomodada y heredó cuando aún era joven una pequeña fortuna de su abuelo materno, gracias a lo cual se pudo concentrar en sus estudios a pesar de perder a su padre cuando sólo tenía quince años. La enseñanza media la cursó en Linz, Austria septentrional, adonde su familia se había mudado, y ya en aquellos primeros años de estudiante se puso de manifiesto su curiosidad (estudiaba las plantas y coleccionaba lepidópteras) y su temperamento apasionado al revelarse como un estudiante impaciente y ambicioso. Durante sus estudios universitarios tuvo como profesores a José Petzval, Anrease von Ettinghausen y Joseph Stefan, entre otros. En el transcurso de su ayudantía docente (entre 1867 y 1869) colaboró con Joseph Stefan en las investigaciones que llevaba a cabo sobre las pérdidas de energía sufridas por los cuerpos muy calientes. Años después, en 1884, Boltzmann dedujo, a partir de los principios de la termodinámica, la ley empírica de Stefan, formulada en 1879, según la cual la pérdida de energía de un cuerpo radiante es proporcional a la cuarta potencia de su temperatura superficial, y demostró que ésta sólo se cumplía si el cuerpo radiante era un cuerpo negro.');
+
+INSERT INTO cientifico (id, nombre, fechas, ciudad, texto) VALUES (6, 'Marie Curie', '07/11/1867-04/07/1934', 'PASSY, FRANCIA',
+ 'Maria Salomea Skłodowska-Curie, conocida como Marie Curie, nació el 7 de noviembre de 1867 en Varsovia, Polonia. Fue una física, matemática y química pionera en el campo de la radiactividad. Marie no solamente fue la primera mujer, sino que la primera persona en recibir dos Premios Nobel en distintas especialidades: Física (1903) y Química (1911), y la primera mujer en hacer clases en la Universidad de París. Marie se casó con el científico Pierre Curie y fue madre de quien recibiría más adelante también un Premio Nobel en Química, Irène Joliot-Curie. Como la radiactividad que generaban algunas muestras era más fuerte de lo que se esperaba, Marie y Pierre sospecharon que había otra sustancia radiactiva más potente que el uranio y el torio, y en 1898 dieron a conocer públicamente que habían descubierto un nuevo elemento: el polonio. Unos meses después anunciaron su nuevo hallazgo: el radio.');
+
+// COMENTARIOS
+CREATE TABLE comentario (
+	id INT PRIMARY KEY,
+	idCientifico INT,
+	FOREIGN KEY (idCientifico) REFERENCES cientifico(id), 
+	autor VARCHAR(100),
+	correo VARCHAR(100),
+	hora VARCHAR(100),
+	texto VARCHAR(5000)
+);
+
+// TESLA
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (1, 1, 'Aitor Ruibal', '02/11/1969', '21:13', 
+'¡Esta página te muestra todo sobre los científico favoritos de la mayoría!');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (2, 1, 'Borja Iglesias', '03/02/1970', '05:23', 
+'Aún se puede mejorar algo más... ¡No dice nada de sus vidas!');
+
+// ROSALIND
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (3, 2, 'Joaquín Sánchez', '02/11/2006', '21:13', 
+'¡Esta página te muestra todo sobre los científico favoritos de la mayoría!');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (4, 2, 'McLovin', '03/02/2023', '23:23', 
+'Expléndido.');
+
+// EINSTEIN
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (5, 3, 'Claudio Bravo', '02/11/2016', '21:13', 
+'¡El mejor científico de todos!');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (6, 3, 'Edgar González', '03/02/2023', '23:23', 
+'Echaba de menos leer acerca de él...');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (7, 3, 'Felipe VI', '02/11/2006', '21:13', 
+'Ojalá tener alguien como él en este país.');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (8, 3, 'McLovin', '03/02/2023', '23:23', 
+'Este tipo le sabe.');
+
+// MAXWELL
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (9, 4, 'Ayoze Pérez', '02/01/2007', '00:13', 
+'¡Majestuoso! ¡Un ser humano brillante!');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (10, 4, 'Sabaly', '13/02/2023', '23:23', 
+'Expléndido.');
+
+// Boltzmann
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (11, 5, 'Antonella', '02/01/2007', '00:13', 
+'Me encanta leer acerca de él.');
+
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (12, 5, 'Lionel Andrés Messi Poccitinni', '14/02/2023', '23:23', 
+'A mí me han enviado aquí.');
+
+// Marie Curie
+INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (13, 6, 'Eduardo Camavinga', '02/01/2017', '12:13', 
+'Un gran avance en cuanto al feminismo en la ciencia, ha aportado mucho.');
+
+
+// FOTOS
+CREATE TABLE fotos(
+	idCientifico INT,
+	FOREIGN KEY (idCientifico) REFERENCES cientifico(id),
+	ruta VARCHAR(100)
+);
+
+INSERT INTO fotos (idCientifico, ruta) VALUES (1, './img/tesla.jpeg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (1, './img/tesla2.jpeg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (2, './img/rosalind1.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (2, './img/rosalind2.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (2, './img/rosalind3.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (3, './img/einstein1.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (3, './img/einstein2.jfif');
+INSERT INTO fotos (idCientifico, ruta) VALUES (3, './img/einstein3.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (3, './img/einstein4.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (4, './img/maxwell1.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (5, './img/boltzmann1.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (5, './img/boltzmann2.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (6, './img/curie1.jpg');
+INSERT INTO fotos (idCientifico, ruta) VALUES (6, './img/curie2.png');
+INSERT INTO fotos (idCientifico, ruta) VALUES (6, './img/curie3.jpg');
+
+
+// PALABRAS MALSONANTES
+CREATE TABLE palabras(
+	palabrota VARCHAR(100) PRIMARY KEY,
+	asteriscos INT
+);
+
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('balded', 6);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('tonto', 5);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('inutil', 6);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('imbecil', 7);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('gilipollas', 10);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('puta', 4);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('hijoputa', 8);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('atontao', 7);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('retrasao', 8);
+INSERT INTO palabras (palabrota, asteriscos) VALUES ('lolero', 6);
+
+        'balded' : '******',
+        'tonto' : '*****',
+        'inutil' : '******',
+        'imbecil' : '*******',
+        'gilipollas' : '**********',
+        'puta' : '****',
+        'hijoputa' : '********',
+        'atontado' : '********',
+        'retrasado' : '*********',
+        'lolero' : '******'

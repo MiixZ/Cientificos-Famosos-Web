@@ -1,0 +1,73 @@
+{% extends "header_footer.html" %}
+    {% block especificar_head %}
+        <script src="./js/comentario.js" defer> </script>
+        <title>Científico</title>
+        <link rel="stylesheet" href="./css/cientifico.css"/> <!-- Con esto decimos el archivo css
+                 que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    {% endblock %}
+
+    {% block main %}
+    <div id="palabrasProhibidas" data-twig="{{ palabras_censuradas|json_encode|raw }}"> {{ palabras_censuradas|json_encode|raw }} </div>
+    <section class="seccion_cientificos">
+        <section class="texto_cientifico">
+            <h1>    {{ cientifico['nombre'] }}    </h1>
+            <h2>    {{ cientifico['fechas'] }}       </h2>
+            <h3>    {{ cientifico['ciudad'] }}    </h3>
+
+            <p class="biografia">
+                {{ cientifico['texto'] }}
+            </p>
+
+            <section class="buttons">
+                <button> <a class="text_button" href="./cientifico_imprimir.php?id={{ cientifico['idc'] }}"> FB </a> </button>
+                <button> <a class="text_button" href="./cientifico_imprimir.php?id={{ cientifico['idc'] }}"> TW </a> </button>
+                <button> <a class="text_button" href="./cientifico_imprimir.php?id={{ cientifico['idc'] }}"> IMPRIMIR </a> </button>
+                <!-- Script que muestra u oculta la sección de comentarios. -->
+                <button> <a class="comment_button" onclick="mostrarComentarios()"> COMENTARIOS </a> </button>
+            </section>
+
+        </section>
+        
+        <section class="imagenes_cientifico">
+            {% for foto in fotosCientifico %}
+                <img class="foto_cientifico" src="{{ foto['ruta'] }}">
+            {% endfor %}
+        </section>
+    </section>
+
+    {% endblock %}
+
+    {% block comentarios %} 
+    <!-- Sección oculta de los comentarios. -->
+    <section id="comentarios">
+        <div id="poner_comentario">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="user_name">
+
+            <label for="mail">Correo electrónico:</label>
+            <input type="email" id="mail" name="user_mail">
+
+            <label for="comentario_usuario">Mensaje:</label>
+            <!-- Script para el evento de escribir sobre el textarea. -->
+            <textarea id="comentario_usuario" name="user_message" oninput="comprobarPalabrasMalsonantes()"></textarea>
+
+            <!-- Script para cuando pulsamos el botón, hacer las validaciones y agregar el comentario. -->
+            <button id="boton_enviar" onclick="aniadirComentarioUsuario()">ENVIAR</button>
+        </div>
+
+        <div id="comentarios_presentes">            <!-- Bucle con todos los comentarios almacenados en la base de datos que concuerden con el id del científico. -->
+            {% block comentariosPresentes %}
+
+                {% for comentario in comentariosCientifico %}
+                <div class="comment">
+                    Autor: {{ comentario['autor'] }} </br>
+                    Correo: {{ comentario['correo'] }} </br>
+                    Hora: {{ comentario['hora'] }} </br>
+                    Comentario: {{ comentario['texto'] }} </br>
+                </div>
+                {% endfor %}
+
+            {% endblock %}
+        </div>
+    </section>
+    {% endblock %}

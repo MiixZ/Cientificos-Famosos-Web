@@ -1,0 +1,39 @@
+    {% extends "header_footer.html" %}
+    
+    {% block especificar_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Científicos</title>
+    <link rel="stylesheet" href="./css/portada.css"/> <!-- Con esto decimos el archivo css
+            que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    {% endblock %}
+    
+    {% block main %}
+    <section class="seccion_cientificos">
+        <!-- Esta es la sección de los científicos, que tendrá dos columnas (en dos divs) de 3 fotos cada una. -->
+        <div class="cientificos">
+            <!-- Primera columna de científicos. -->
+            <div class="cientificos_">
+                <img class="foto_cientifico" src="./img/tesla.jpeg">
+                <a class="pie_cientifico" href="./cientifico.php?id=1"> Nikola Tesla </a>
+
+                <img class="foto_cientifico" src="./img/Einstein.jpg">
+                <a class="pie_cientifico" href="./cientifico.php?id=3"> Albert Einstein </a>
+
+                <img class="foto_cientifico" src="./img/boltzmann.jpg">
+                <a class="pie_cientifico" href="./cientifico.php?id=5"> Ludwig Boltzmann </a>
+            </div>
+
+            <!-- Segunda columna de científicos. -->
+            <div class="cientificos_">
+                <img class="foto_cientifico" src="./img/franklin.jpeg">
+                <a class="pie_cientifico" href="./cientifico.php?id=2"> Rosalind Franklin </a>
+
+                <img class="foto_cientifico" src="./img/maxwell.jpg">
+                <a class="pie_cientifico" href="./cientifico.php?id=4"> James Clerk Maxwell </a>
+
+                <img class="foto_cientifico" src="./img/Marie_Curie.jpg">
+                <a class="pie_cientifico" href="./cientifico.php?id=6"> Marie Curie </a>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

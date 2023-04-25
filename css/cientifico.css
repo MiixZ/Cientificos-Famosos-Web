@@ -1,0 +1,265 @@
+html {
+    background-color: beige;
+    margin: 0.1rem;
+}
+
+/* ----------------------- CABECERA -------------------------------- */
+
+.cabecera {
+    display: flex;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding: 0.5%;
+    background-image: url("../img/header_img.jpg");
+}
+
+.titulo_pagina {
+    display: flex;
+    padding-left: 20%;
+    font-style: italic;
+    color: navajowhite;
+    font-size: 30px;
+    align-items: center;
+}
+
+.texto_cabecera {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.menus {
+    display: flex;
+    font-family: "Comic Sans MS", cursive;
+    color: orange;
+    width: 100%;
+    padding-left: 15%;
+}
+
+.menu_text {
+    padding-right: 1%;
+    padding-left: 5%;
+    font-family: "Arial Black", cursive;
+    text-decoration: none;
+    color: orange;
+}
+
+.imagen_cabecera {
+    width: 20%;
+    align-content: center;
+}
+
+.imagen_cabecera_ {
+    width: 7rem;
+}
+
+/* ----------------------- SECCIÓN PRINCIPAL -------------------------------- */
+
+.main_pagina {
+    display: flex;
+}
+
+#palabrasProhibidas {
+    display: none;
+}
+
+.main_section {
+    display: flex;
+    padding: 0.5%;
+    height: 50rem;
+}
+
+.seccion_cientificos {
+    display: flex;
+    width: 80%;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding-right: 0.5%;
+    background-image: url("../img/cientifico_background.jpg");
+    background-size: 100%;
+}
+
+.imagenes_cientifico {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.texto_cientifico {
+    width: 85%;
+    height: 60%;
+    text-align: justify;
+}
+
+.biografia {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Comic Sans MS", serif;
+    font-size: 17px;
+    text-justify: distribute;
+}
+
+.foto_cientifico {
+    alignment: right;
+    width: 10rem;
+    height: 14rem;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-left: 0.5%;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 6.5%;
+}
+
+.text_button {
+    font-family: "Comic Sans MS", cursive;
+    color: black;
+    text-decoration: none;
+}
+
+.seccion_enlaces {
+    width: 20%;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding-left: 0.5%;
+    background-image: url("../img/cientifico_background.jpg");
+    background-size: 100%;
+}
+
+.titulo_enlaces {
+    align-content: center;
+    width: 100%;
+    color: darkblue;
+}
+
+.enlace {
+    font-family: "Comic Sans MS", cursive;
+    color: black;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    font-family: "Comic Sans MS", cursive;
+    color: purple;
+    font-size: 18px;
+}
+
+/*-----COMENTARIOS---------*/
+#comentarios {
+    display: none;
+}
+
+#poner_comentario {
+    display: flex;
+    flex-direction: column;
+    font-family: "Calibri Light", serif;
+    width: 100%;
+    align-items: center;
+    align-content: space-between;
+}
+
+#comentarios_presentes {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 0.5%;
+}
+
+#comentario_usuario {
+    width: 30%;
+    height: 6rem;
+}
+
+.comment {
+    font-family: "Comic Sans MS", serif;
+    font-size: 15px;
+    padding: 0.5%;
+    border-radius: 200px;
+    border-style: solid;
+    border-color: orange;
+    text-align: center;
+}
+
+#boton_enviar {
+    margin-top: 0.5%;
+}
+
+/* ----------------------- PIE PÁGINA -------------------------------- */
+
+.pie_pagina {
+    display: flex;
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
+    border: 0.2rem solid orangered;
+    border-radius: 22px;
+    padding: 0.5%;
+}
+
+.imagenpie {
+    width: 7rem;
+    height: 7rem;
+    padding: 0.5%;
+    text-align: right;
+}
+
+.texto_pie {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------- GENERAL -------------------------------- */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    border-radius: 150px;
+}
+
+h1 {
+    font-size: 25px;
+    font-family: "Arial Black", serif;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: Calibri, serif;
+    text-align: center;
+}
+
+h3 {
+    font-size: 17px;
+    font-family: Calibri, serif;
+    text-align: center;
+}
+
+button {
+    text-align: center;
+    align-content: space-between;
+    background-color: darkgrey;
+    width: 20%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+button:hover {
+    background-color: green;
+    font-family: "Arial Black", serif;
+}
+
+textarea {
+    resize: none;
+}
+
+footer {
+    margin-top: 2%;
+}

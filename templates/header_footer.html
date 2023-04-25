@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block especificar_head %}
+
+        {% endblock %}
+    </head>
+
+    <body class="main_pagina">
+    <!-- El body está dividido en: Cabecera, sección principal (científicos + enlaces) y pie de página. -->
+        <header class="cabecera">
+            <!-- La primera parte de la cabecera es el logotipo (izquierda). -->
+            <section class="imagen_cabecera">
+                <img class="imagen_cabecera_" src="./img/logotipo.jpg">
+            </section>
+
+            <!-- La segunda parte de la cabecera es el título y el menú horizontal. -->
+            <section class="texto_cabecera">
+                <h1 class="titulo_pagina">
+                             100TIFICOS y 100TIFICAS
+                </h1>
+
+                <section class="menus">
+                    <a class="menu_text" href=""> Inicio </a>
+                    <a class="menu_text" href=""> Referencias </a>
+                    <a class="menu_text" href=""> Ayuda </a>
+                </section>
+            </section>
+        </header>
+
+        <section class="main_section">
+            {% block main %}
+            
+            {% endblock %}
+
+            <nav class="seccion_enlaces">
+                <h2 class="titulo_enlaces"> Enlaces que tal vez te interesen </h2>
+                <h3 class="titulo_enlaces"> 100 científicos cristianos </h3>
+                <a class="enlace" href="https://www3.gobiernodecanarias.org/medusa/ecoblog/jregamu/?p=303"> https://www.gobiernodecanarias.org/ </a>
+
+                <h3 class="titulo_enlaces"> 100 científicos por épocas </h3>
+                <a class="enlace" href="https://www.sutori.com/es/historia/100-cientificos--9ERNVojCZNceaEXFLtSZB2sa"> https://www.sutori.com/es/historia/ </a>
+
+                <h3 class="titulo_enlaces"> 100 científicos que más aportaron </h3>
+                <a class="enlace" href="https://es.slideshare.net/grethelsaldivar/los-100-cientificos-que-han-aportado-a-la-ciencia"> https://es.slideshare.net/grethelsaldivar/ </a>
+
+                <h3 class="titulo_enlaces"> ¿Qué es la ciencia? </h3>
+                <a class="enlace" href="https://www.significados.com/ciencia/"> https://www.significados.com/ciencia/ </a>
+
+                <h3 class="titulo_enlaces"> Ciencia y Religión </h3>
+                <a class="enlace" href="https://www.unedtudela.es/noticias/noticia/1886#:~:text=La%20Ciencia%20se%20mueve%20en,%2C%20para%20algunos%20científicos%2C%20integrarse."> https://www.unedtudela.es/ </a>
+            </nav>
+        </section>
+
+        {% block comentarios %} 
+
+            {% block comentariosPresentes %} 
+
+            {% endblock %}
+
+        {% endblock %}
+
+        <footer class="pie_pagina">
+            <img class="imagenpie" src="./img/copyright.png">
+            <div class="texto_pie">
+                <p> Contacto: e.ismaelgilena26@go.ugr.es </p>
+                <p> Práctica 3 SIBW </p>
+                <p> Todos los derechos reservados </p>
+            </div>
+        </footer>
+    </body>
+</html>
