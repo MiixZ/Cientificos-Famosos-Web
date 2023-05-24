@@ -155,7 +155,7 @@
         global $mysqli;
         $ha_registrado = false;
 
-        if(!comprobarUsuario($username, $password)) {
+        if(comprobarUsuario($username, $password)) {
             return $ha_registrado;
         }
 
