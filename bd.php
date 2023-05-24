@@ -125,4 +125,56 @@
 
         return $palabras;
     }
+
+    function comprobarUsuario($username, $password) {
+        conectarBD();
+        global $mysqli;
+        $es_correcto = false;
+
+        $stmt = $mysqli->prepare("SELECT nombre_usuario, password FROM usuario WHERE nombre_usuario = ? AND password = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("ss", $username, $password);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                $es_correcto = true;
+            }
+        }
+
+        return $es_correcto;
+    }
+
+    function registrarUsuario($username, $password, $correo) {
+        conectarBD();
+        global $mysqli;
+        $ha_registrado = false;
+
+        if(!comprobarUsuario($username, $password)) {
+            return $ha_registrado;
+        }
+
+        $stmt = $mysqli->prepare("INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superuser) VALUES (?, ?, ?, 0, 0, 0)");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("sss", $username, $password, $correo);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                $ha_registrado = true;
+            }
+        }
+
+        return $ha_registrado;
+    }
 ?>

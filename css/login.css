@@ -4,6 +4,13 @@ html {
 }
 
 /* ----------------------- LOGIN -------------------------------- */
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
 #login {
     background-color: #fff;
     border-radius: 5px;

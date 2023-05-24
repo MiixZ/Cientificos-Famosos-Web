@@ -124,8 +124,12 @@ INSERT INTO palabras (palabrota, asteriscos) VALUES ('lolero', 6);
 // USUARIOS (LOGUEARSE)
 
 CREATE TABLE usuario (
-	nombre VARCHAR(100);
-	password VARCHAR(100);
+	nombre_usuario VARCHAR(100) PRIMARY KEY,
+	password VARCHAR(100),
+	correo VARCHAR(100),
+	moderador TINYINT(1),
+	gestor TINYINT(1),
+	superuser TINYINT(1)
 );
 
         'balded' : '******',

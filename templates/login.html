@@ -9,8 +9,18 @@
     {% endblock %}
 
     {% block main %}
+        {% if error is not empty %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% else %}
+            <div class="error">
+                <p>Introduce tus datos</p>
+            </div>
+        {% endif %}
+
         <section id="login">
-            <form class="formulario" action="../login.php" method="post">
+            <form class="formulario" action="./login.php" method="post">
                 <input type="text" class="texto_form" name="username" placeholder="Nombre de usuario" required>
                 <input type="password" class="texto_form" name="password" placeholder="Contraseña" required>
 
@@ -22,11 +32,11 @@
         </section>
 
         <section id="registro">
-            <form class="formulario" action="../login.php" method="post">
-                <input type="text" class="texto_form" name="username" placeholder="Nombre de usuario" required>
-                <input type="email" class="texto_form" name="password" placeholder="E-mail" required>
-                <input type="password" class="texto_form" name="password" placeholder="Contraseña" required>
-                <input type="password" class="texto_form" name="password" placeholder="Repetir Contraseña" required>
+            <form class="formulario" action="./login.php" method="post">
+                <input type="text" class="texto_form" name="usernameRegistro" placeholder="Nombre de usuario" required>
+                <input type="email" class="texto_form" name="mailRegistro" placeholder="E-mail" required>
+                <input type="password" class="texto_form" name="passwordRegistro" placeholder="Contraseña" required>
+                <input type="password" class="texto_form" name="RepitepasswordRegistro" placeholder="Repetir Contraseña" required>
 
                 <div class="botones_form">
                     <input class="boton_form" type="submit" value="Registrarse">
