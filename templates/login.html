@@ -5,19 +5,34 @@
     <title>Científicos</title>
     <link rel="stylesheet" href="./css/login.css"/> <!-- Con esto decimos el archivo css
                 que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    <script src="./js/inicio_sesion.js" defer></script>
     {% endblock %}
 
     {% block main %}
-        <section class="login">
-            <form action="../login.php" method="post">
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
-                <br/>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                <br/>
-                <br/>
-                <input type="submit" value="Iniciar sesión">
+        <section id="login">
+            <form class="formulario" action="../login.php" method="post">
+                <input type="text" class="texto_form" name="username" placeholder="Nombre de usuario" required>
+                <input type="password" class="texto_form" name="password" placeholder="Contraseña" required>
+
+                <div class="botones_form" >
+                    <input class="boton_form" type="submit" value="Iniciar sesión">
+                    <button class="boton_form" onclick="cambiazo()">Registrarse</button>
+                </div>
             </form>
         </section>
+
+        <section id="registro">
+            <form class="formulario" action="../login.php" method="post">
+                <input type="text" class="texto_form" name="username" placeholder="Nombre de usuario" required>
+                <input type="email" class="texto_form" name="password" placeholder="E-mail" required>
+                <input type="password" class="texto_form" name="password" placeholder="Contraseña" required>
+                <input type="password" class="texto_form" name="password" placeholder="Repetir Contraseña" required>
+
+                <div class="botones_form">
+                    <input class="boton_form" type="submit" value="Registrarse">
+                    <button class="boton_form" type="button" onclick="cambiazo()">Iniciar sesión</button>
+                </div>
+            </form>
+        </section>
+
     {% endblock %}

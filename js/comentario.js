@@ -48,10 +48,7 @@ function mostrarComentarios() {
     var x = document.getElementById("poner_comentario");
     var comentarios = document.getElementById("comentarios");
 
-    if(comentarios.style.display==="none" || comentarios.style.display==="") {
-        /*if(comentarios.style.display==="")
-            activarComentariosIniciales();*/
-
+    if(comentarios.style.display === "none" || comentarios.style.display === "") {
         comentarios.style.display = "flex";
         comentarios.style.flexDirection = "column";
         x.style.display = "flex";

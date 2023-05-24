@@ -4,7 +4,7 @@ html {
 }
 
 /* ----------------------- LOGIN -------------------------------- */
-.login {
+#login {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -12,7 +12,67 @@ html {
     max-width: 400px;
     padding: 20px 40px;
     position: relative;
+    margin-bottom: 5rem;
     top: 100px;
+}
+
+#registro {
+    display: none;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 5rem;
+    top: 100px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto_form {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 100%;
+}
+
+.texto_form:focus {
+    border-color: #007eff;
+    outline: none;
+}
+
+.botones_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.boton_form {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 60%;
+}
+
+.boton_form:hover {
+    background-color: #3e8e41;
+}
+
+.boton_form:focus {
+    outline: none;
 }
 
 /* ----------------------- CABECERA -------------------------------- */
@@ -75,6 +135,7 @@ html {
 
 .main_section {
     display: flex;
+    flex-direction: column;
     padding: 0.5%;
 }
 
