@@ -121,6 +121,13 @@ INSERT INTO palabras (palabrota, asteriscos) VALUES ('atontao', 7);
 INSERT INTO palabras (palabrota, asteriscos) VALUES ('retrasao', 8);
 INSERT INTO palabras (palabrota, asteriscos) VALUES ('lolero', 6);
 
+// USUARIOS (LOGUEARSE)
+
+CREATE TABLE usuario (
+	nombre VARCHAR(100);
+	password VARCHAR(100);
+);
+
         'balded' : '******',
         'tonto' : '*****',
         'inutil' : '******',

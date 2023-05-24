@@ -4,13 +4,6 @@
 
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
-    
-    /*if(isset($_GET['id'])) {
-        $id_cientifico = $_GET['id'];
-    }
-    else {
-        $id_cientifico = -1;
-    }*/
 
     if(isset($_GET['id'])) {
         $id_cientifico = $_GET['id'];
