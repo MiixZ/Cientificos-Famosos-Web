@@ -24,6 +24,7 @@
             $error = "El usuario no existe o la contraseña es incorrecta.";
         } else {
             $_SESSION['username'] = $username;
+            $_SESSIOn['registrado'] = true;
             header("Location: index.php");
         }
     }
