@@ -14,6 +14,16 @@
         if(!registrarUsuario($username, $password, $correo)) {
             $error = "El usuario ya existe.";
         } else {
+            $error = "Usuario registrado correctamente, puedes iniciar sesión.";
+        }
+    } else if(isset($_POST["username"])) {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        if(!comprobarUsuario($username, $password)) {
+            $error = "El usuario no existe o la contraseña es incorrecta.";
+        } else {
+            $_SESSION['username'] = $username;
             header("Location: index.php");
         }
     }

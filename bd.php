@@ -142,7 +142,7 @@
         $res = $stmt->get_result();
 
         if($res !== false) {
-            if($res->num_rows > 0) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
                 $es_correcto = true;
             }
         }
@@ -167,13 +167,7 @@
         // Ejecutar la consulta.
         $stmt->execute();
 
-        $res = $stmt->get_result();
-
-        if($res !== false) {
-            if($res->num_rows > 0) {
-                $ha_registrado = true;
-            }
-        }
+        $ha_registrado = true;
 
         return $ha_registrado;
     }
