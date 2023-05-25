@@ -150,6 +150,31 @@
         return $es_correcto;
     }
 
+    function getCorreo($username) {
+        conectarBD();
+        global $mysqli;
+        $correo = "";
+
+        $stmt = $mysqli->prepare("SELECT correo FROM usuario WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+                $correo = $row['correo'];
+            }
+        }
+
+        return $correo;
+    }
+
     function registrarUsuario($username, $password, $correo) {
         conectarBD();
         global $mysqli;

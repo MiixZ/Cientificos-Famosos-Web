@@ -15,6 +15,95 @@ html {
     width: 30%;
 }
 
+.editar_perfil {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 5rem;
+    top: 100px;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos_ {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+}
+
+.titulo {
+    font-family: Bahnschrift Condensed, serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.labels {
+    font-family: Bahnschrift Condensed, serif;
+    margin-bottom: 0.5rem;
+}
+
+.boton {
+    background-color: #007eff;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 95%;
+}
+
+.boton:hover {
+    background-color: #0060d1;
+}
+
+#username_edit {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+#email_edit {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+#password_edit {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
 .error {
     color: red;
     font-size: 0.8rem;
@@ -105,7 +194,10 @@ html {
 
 .titulo_pagina {
     display: flex;
-    padding-left: 20%;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
     font-style: italic;
     color: navajowhite;
     font-size: 30px;

@@ -1,0 +1,36 @@
+{% extends "header_footer.html" %}
+
+    {% block especificar_head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar perfil</title>
+        <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
+                        que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    {% endblock %}
+
+    {% block main %}
+    <h1 class="titulo">Edita tu perfil, {{ username }}</h1>
+
+    <form class="editar_perfil" action="./login.php" method="post">
+        <div class="datos">
+            <div class="datos_">
+                <label class="labels">Nombre de usuario</label>
+                <input type="text" id="username_edit" name="username" placeholder="{{ username }}" required>
+            </div>
+
+            <div class="datos_">
+                <label class="labels">E-mail</label>
+                <input type="email" id="email_edit" name="email" placeholder="{{ correo }}" required>
+            </div>
+
+            <div class="datos_">
+                <label class="labels">Contraseña</label>
+                <input type="password" id="password_edit" name="password" value="" required>
+            </div>
+        </div>
+
+        <div class="botones">
+            <input class="boton" type="submit" value="Guardar cambios">
+            <input class="boton" type="reset" value="Cancelar">
+        </div>
+    </form>
+    {% endblock %}
