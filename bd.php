@@ -150,6 +150,24 @@
         return $es_correcto;
     }
 
+    function editarUsernameCorreoPassword($username, $correo, $password, $antiguo_username) {
+        conectarBD();
+        global $mysqli;
+        $ha_editado = false;
+
+        $stmt = $mysqli->prepare("UPDATE usuario SET nombre_usuario = ?, correo = ?, password =? WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("ssss", $username, $correo, $password, $antiguo_username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_editado = true;
+
+        return $ha_editado;
+    }
+
     function getCorreo($username) {
         conectarBD();
         global $mysqli;
