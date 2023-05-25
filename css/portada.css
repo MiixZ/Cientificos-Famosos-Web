@@ -27,7 +27,7 @@ html {
     display: flex;
     align-content: center;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     height: 100%;
 }
 
@@ -54,6 +54,30 @@ html {
 
 .imagen_cabecera_ {
     width: 7rem;
+}
+
+.inicio_sesion {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    font-family: "Comic Sans MS", cursive;
+    color: orange;
+    text-decoration: none;
+    width: 30%;
+}
+
+.usuario_ {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    font-family: "Comic Sans MS", cursive;
+    color: orange;
+    text-decoration: none;
+}
+
+.inicio_sesion:hover {
+    font-family: "Arial Black", cursive;
+    color: orange;
 }
 
 /* ----------------------- SECCIÓN PRINCIPAL -------------------------------- */
