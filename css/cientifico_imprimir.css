@@ -54,6 +54,10 @@ html {
     padding-left: 25%;
 }
 
+.inicio_sesion {
+    display: none;
+}
+
 /* ----------------------- SECCIÓN PRINCIPAL -------------------------------- */
 
 .main_pagina {

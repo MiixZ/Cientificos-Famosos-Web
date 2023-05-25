@@ -1,6 +1,7 @@
 <?php
     require_once "./vendor/autoload.php";
     include("bd.php"); // Controlador.
+    session_start();
 
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
@@ -12,6 +13,11 @@
         } 
     } else {
         $id_cientifico = -1;
+    }
+
+    if(!isset($_SESSION['registrado'])) {
+        $_SESSION['registrado'] = false;
+        $_SESSION['username'] = "Anónimo";
     }
     
     $cientifico = getCientifico($id_cientifico);
@@ -25,5 +31,7 @@
     echo $twig->render('cientifico.html', ['cientifico' => $cientifico,
                        'comentariosCientifico' => $comentariosCientifico,
                        'fotosCientifico' => $fotosCientifico,
-                       'palabras_censuradas' => $palabras_censuradas]);
+                       'palabras_censuradas' => $palabras_censuradas,
+                       'registrado' => $_SESSION['registrado'],
+                        'username' => $_SESSION['username']]);
 ?>
