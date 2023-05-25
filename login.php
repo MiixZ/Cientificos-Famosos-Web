@@ -5,6 +5,7 @@
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
     $error = "";
+    session_start();
 
     if(isset($_POST["usernameRegistro"])) {
         $username = $_POST["usernameRegistro"];
@@ -24,7 +25,7 @@
             $error = "El usuario no existe o la contraseña es incorrecta.";
         } else {
             $_SESSION['username'] = $username;
-            $_SESSIOn['registrado'] = true;
+            $_SESSION['registrado'] = true;
             header("Location: index.php");
         }
     }

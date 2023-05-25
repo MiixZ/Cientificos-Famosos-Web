@@ -117,6 +117,20 @@ html {
     padding-left: 15%;
 }
 
+.inicio_sesion {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    font-family: "Comic Sans MS", cursive;
+    color: orange;
+    text-decoration: none;
+}
+
+.inicio_sesion:hover {
+    font-family: "Arial Black", cursive;
+    color: orange;
+}
+
 .menu_text {
     padding-right: 1%;
     padding-left: 5%;
