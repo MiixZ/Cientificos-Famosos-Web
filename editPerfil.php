@@ -20,9 +20,8 @@
         header("Location: index.php");
     }
 
-    if(!isset($_SESSION['registrado'])) {
-        $_SESSION['registrado'] = false;
-        $_SESSION['username'] = "Anónimo";
+    if(!isset($_SESSION['registrado']) || !$_SESSION['registrado']) {
+        header("Location: index.php");
     } else {
         // Hay que permitir que el usuario pueda cambiar su nombre de usuario y su correo.
 
