@@ -46,6 +46,26 @@
         return $cientifico;
     }
 
+    function getComentarios() {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT * FROM comentario");
+
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+        $comentarios = [];
+
+        if($res !== false && $res->num_rows > 0) {
+            while($row = $res->fetch_assoc()) {
+                $comentarios[] = $row;
+            }
+        }
+
+        return $comentarios;
+    }
+
     function getComentario($id) {
         conectarBD();
         global $mysqli;
@@ -69,7 +89,6 @@
                     $comentario = array('autor' => $row['autor'], 'correo' => $row['correo'], 'hora' => $row['hora'], 'texto' => $row['texto']);
                     $comentarios[] = $comentario;
                 }
-                echo "<br />";
             }
         }
 

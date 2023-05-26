@@ -302,6 +302,22 @@ html {
     padding-bottom: 4%;
 }
 
+.comentarios {
+    align-items: center;
+}
+
+.comment {
+    align-content: center;
+    font-family: "Comic Sans MS", serif;
+    font-size: 15px;
+    padding: 0.5%;
+    border-radius: 200px;
+    border-style: solid;
+    border-color: orange;
+    text-align: center;
+    width: 50%;
+}
+
 .pie_cientifico:hover {
     font-family: "Arial Black", cursive;
     color: orange;

@@ -140,5 +140,5 @@ function comprobarPalabrasMalsonantes() {
 function editarComentario(id_comentario) {
     var comentario = document.getElementById(id_comentario);
     var texto_comentario = comentario.textContent;
-    comentario.innerHTML = prompt("Introduzca el nuevo comentario: ", texto_comentario + " editado por el administrador.");
+    comentario.innerHTML = prompt("Introduzca el nuevo comentario: ", texto_comentario) + " { editado por el moderador }";
 }

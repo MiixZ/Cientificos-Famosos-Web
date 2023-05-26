@@ -1,0 +1,27 @@
+{% extends "header_footer.html" %}
+
+    {% block especificar_head %}
+        <script src="./js/comentario.js" defer> </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar comentario</title>
+        <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
+                            que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    {% endblock %}
+
+    {% block main %}
+        <div class="comentarios">
+        <!-- Todos los comentarios -->
+            {% for comentario in comentarios %}
+                {% set contador = loop.index %}
+                <div class="comment">
+                    Autor: {{ comentario['autor'] }} </br>
+                    id Científico: {{ comentario['idCientifico'] }} </br>
+                    Correo: {{ comentario['correo'] }} </br>
+                    Hora: {{ comentario['hora'] }} </br>
+                    Comentario: <p class="comentario" id="{{ contador }}"> {{ comentario['texto'] }} </p> </br>
+                    <button class="boton_editar_comentario" onclick="editarComentario(this.getAttribute('data-contador'))" data-contador="{{ contador }}"> Editar </button>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endblock %}
