@@ -1,5 +1,6 @@
 <?php
     require_once "./vendor/autoload.php";
+    include("bd.php");
 
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $twig = new \Twig\Environment($loader);
@@ -12,5 +13,6 @@
         $_SESSION['correo'] = "";
     }
 
-    echo $twig->render('index.html', ['registrado' => $_SESSION['registrado'], 'username' => $_SESSION['username']]);
+    echo $twig->render('index.html', ['registrado' => $_SESSION['registrado'], 'username' => $_SESSION['username'],
+                                            'modder' => esModder($_SESSION['username'])]);
 ?>

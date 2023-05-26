@@ -1,9 +1,9 @@
     {% extends "header_footer.html" %}
     
     {% block especificar_head %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Científicos</title>
-    <link rel="stylesheet" href="./css/portada.css"/> <!-- Con esto decimos el archivo css
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Científicos</title>
+        <link rel="stylesheet" href="./css/portada.css"/> <!-- Con esto decimos el archivo css
             que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
     {% endblock %}
     
@@ -36,5 +36,9 @@
                 <a class="pie_cientifico" href="./cientifico.php?id=6"> Marie Curie </a>
             </div>
         </div>
+
+        {% if modder %}
+            <a href="./editComent.php"> Editar comentarios </a>
+        {% endif %}
     </section>
     {% endblock %}
