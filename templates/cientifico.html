@@ -39,35 +39,41 @@
 
     {% block comentarios %} 
     <!-- Sección oculta de los comentarios. -->
-    <section id="comentarios">
-        <div id="poner_comentario">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="user_name">
+        <section id="comentarios">
+            {% if registrado %}
+                <div id="poner_comentario">
+                    <label for="name">Nombre:</label>
+                    <label id="name"> {{ username }}</label>
 
-            <label for="mail">Correo electrónico:</label>
-            <input type="email" id="mail" name="user_mail">
+                    <label for="mail">Correo electrónico:</label>
+                    <label id="mail"> {{ correo }} </label>
 
-            <label for="comentario_usuario">Mensaje:</label>
-            <!-- Script para el evento de escribir sobre el textarea. -->
-            <textarea id="comentario_usuario" name="user_message" oninput="comprobarPalabrasMalsonantes()"></textarea>
+                    <label for="comentario_usuario">Mensaje:</label>
+                    <!-- Script para el evento de escribir sobre el textarea. -->
+                    <textarea id="comentario_usuario" name="user_message" oninput="comprobarPalabrasMalsonantes()"></textarea>
 
-            <!-- Script para cuando pulsamos el botón, hacer las validaciones y agregar el comentario. -->
-            <button id="boton_enviar" onclick="aniadirComentarioUsuario()">ENVIAR</button>
-        </div>
-
-        <div id="comentarios_presentes">            <!-- Bucle con todos los comentarios almacenados en la base de datos que concuerden con el id del científico. -->
-            {% block comentariosPresentes %}
-
-                {% for comentario in comentariosCientifico %}
-                <div class="comment">
-                    Autor: {{ comentario['autor'] }} </br>
-                    Correo: {{ comentario['correo'] }} </br>
-                    Hora: {{ comentario['hora'] }} </br>
-                    Comentario: {{ comentario['texto'] }} </br>
+                    <!-- Script para cuando pulsamos el botón, hacer las validaciones y agregar el comentario. -->
+                    <button id="boton_enviar" onclick="aniadirComentarioUsuario()">ENVIAR</button>
                 </div>
-                {% endfor %}
+            {% else %}
+                <div class="MandarAInicioSesion">
+                    Para poner un comentario, por favor,&nbsp; <a class="iniciar_sesion" href="./login.php"> inicia sesión.</a>
+                </div>
+            {% endif %}
 
-            {% endblock %}
-        </div>
-    </section>
+            <div id="comentarios_presentes">            <!-- Bucle con todos los comentarios almacenados en la base de datos que concuerden con el id del científico. -->
+                {% block comentariosPresentes %}
+
+                    {% for comentario in comentariosCientifico %}
+                    <div class="comment">
+                        Autor: {{ comentario['autor'] }} </br>
+                        Correo: {{ comentario['correo'] }} </br>
+                        Hora: {{ comentario['hora'] }} </br>
+                        Comentario: {{ comentario['texto'] }} </br>
+                    </div>
+                    {% endfor %}
+
+                {% endblock %}
+            </div>
+        </section>
     {% endblock %}

@@ -65,14 +65,15 @@ function aniadirComentarioUsuario() {
     var comentarios = document.getElementById("comentarios") ;
 
     // trim() para eliminar los espacios en blanco al final y al inicio de la cadena.
-    if (nombre.value.trim() !== "" && email.value.trim() !== "" && comentario.value.trim() !== "") {
+    if (nombre.textContent.trim() !== "" && email.textContent.trim() && comentario.value.trim() !== "") {
         eliminarErrorComentarios(comentarios);
-        if(validarCorreoElectronico(email.value.toString())) {
+        if(validarCorreoElectronico(email.textContent.trim().toString())) {
             var date = new Date();
             date.setMilliseconds(Date.now());
-            var comentarioUsuario = new Comentario(nombre.value.toString(), date, comentario.value.toString());
+            var comentarioUsuario = new Comentario(nombre.textContent.toString(), date, comentario.value.toString());
             comentarioUsuario.generateComentario();
         } else {
+            console.log(email.textContent.toString());
             ErrorComentarios(comentarios, 2);
         }
     } else {

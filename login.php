@@ -26,6 +26,7 @@
         } else {
             $_SESSION['username'] = $username;
             $_SESSION['registrado'] = true;
+            $_SESSION['correo'] = getCorreo($username);
             header("Location: index.php");
         }
     }

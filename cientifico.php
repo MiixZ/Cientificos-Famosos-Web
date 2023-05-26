@@ -18,6 +18,7 @@
     if(!isset($_SESSION['registrado'])) {
         $_SESSION['registrado'] = false;
         $_SESSION['username'] = "Anónimo";
+        $_SESSION['correo'] = "";
     }
     
     $cientifico = getCientifico($id_cientifico);
@@ -33,5 +34,6 @@
                        'fotosCientifico' => $fotosCientifico,
                        'palabras_censuradas' => $palabras_censuradas,
                        'registrado' => $_SESSION['registrado'],
-                        'username' => $_SESSION['username']]);
+                        'username' => $_SESSION['username'],
+                        'correo' => $_SESSION['correo']]);
 ?>

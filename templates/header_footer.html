@@ -24,7 +24,7 @@
                 </h1>
 
                 <section class="menus">
-                    <a class="menu_text" href=""> Inicio </a>
+                    <a class="menu_text" href="./index.php"> Inicio </a>
                     <a class="menu_text" href=""> Referencias </a>
                     <a class="menu_text" href=""> Ayuda </a>
                 </section>
@@ -33,7 +33,7 @@
             <section class="inicio_sesion">
                 {% if registrado %}
                     <a class="inicio_sesion" href="./editPerfil.php"> Editar perfil </a>
-                    <a class="inicio_sesion" href="./login.php"> Cerrar sesión </a>
+                    <a class="inicio_sesion" href="./unlogin.php"> Cerrar sesión </a>
                     <p class="usuario_"> Bienvenido {{ username }} </p>
                 {% else %}
                     <a class="inicio_sesion" href="./login.php"> Registrarse </a>

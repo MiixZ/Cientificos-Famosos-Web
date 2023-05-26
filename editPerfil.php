@@ -24,11 +24,8 @@
         header("Location: index.php");
     } else {
         // Hay que permitir que el usuario pueda cambiar su nombre de usuario y su correo.
-
-        if($_SESSION['registrado']) {
-            $username = $_SESSION['username'];
-            $correo = getCorreo($username);
-        }
+        $username = $_SESSION['username'];
+        $correo = getCorreo($username);
     }
 
     echo $twig->render('editPerfil.html', ['correo' => $correo, 'username' => $username]);

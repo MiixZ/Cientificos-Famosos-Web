@@ -9,6 +9,7 @@
     if(!isset($_SESSION['registrado']) || !isset($_SESSION['username'])) {
         $_SESSION['registrado'] = false;
         $_SESSION['username'] = "Anónimo";
+        $_SESSION['correo'] = "";
     }
 
     echo $twig->render('index.html', ['registrado' => $_SESSION['registrado'], 'username' => $_SESSION['username']]);
