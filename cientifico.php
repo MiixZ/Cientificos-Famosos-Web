@@ -29,11 +29,16 @@
 
     $palabras_censuradas = getPalabras();
 
+    if(!isset($_SESSION['modder'])) {
+        $_SESSION['modder'] = false;
+    }
+
     echo $twig->render('cientifico.html', ['cientifico' => $cientifico,
                        'comentariosCientifico' => $comentariosCientifico,
                        'fotosCientifico' => $fotosCientifico,
                        'palabras_censuradas' => $palabras_censuradas,
                        'registrado' => $_SESSION['registrado'],
                         'username' => $_SESSION['username'],
-                        'correo' => $_SESSION['correo']]);
+                        'correo' => $_SESSION['correo'],
+                        'modder' => $_SESSION['modder']]);
 ?>

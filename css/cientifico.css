@@ -213,6 +213,19 @@ html {
     align-content: space-between;
 }
 
+.comentario {
+    display: flex;
+    flex-direction: column;
+    font-family: "Calibri Light", serif;
+    width: 100%;
+    align-items: center;
+    align-content: space-between;
+}
+
+.boton_editar_comentario:hover {
+    color: cadetblue;
+}
+
 #comentarios_presentes {
     margin-left: 25%;
     margin-right: 25%;

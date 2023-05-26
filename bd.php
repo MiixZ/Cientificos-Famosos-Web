@@ -214,4 +214,29 @@
 
         return $ha_registrado;
     }
+
+    function esModder($username) {
+        conectarBD();
+        global $mysqli;
+        $es_modder = false;
+
+        $stmt = $mysqli->prepare("SELECT moderador FROM usuario WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+                $es_modder = $row['moderador'];
+            }
+        }
+
+        return $es_modder;
+    }
 ?>

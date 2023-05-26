@@ -132,6 +132,12 @@ CREATE TABLE usuario (
 	superuser TINYINT(1)
 );
 
+INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superuser) VALUES ('mod', 'mod', 'mod@mod.com', 1, 0, 0);
+
+INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superuser) VALUES ('gestor', 'gestor', 'gestor@gestor.com', 0, 1, 0);
+
+INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superuser) VALUES ('super', 'super', 'super@super.com', 0, 0, 1);
+
         'balded' : '******',
         'tonto' : '*****',
         'inutil' : '******',

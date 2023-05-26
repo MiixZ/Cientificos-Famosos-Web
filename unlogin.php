@@ -5,6 +5,7 @@
         $_SESSION['registrado'] = false;
         $_SESSION['username'] = "Anónimo";
         $_SESSION['correo'] = "";
+        $_SESSION['modder'] = false;
     }
 
     header("Location: index.php");

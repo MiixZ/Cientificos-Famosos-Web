@@ -65,12 +65,16 @@
                 {% block comentariosPresentes %}
 
                     {% for comentario in comentariosCientifico %}
-                    <div class="comment">
-                        Autor: {{ comentario['autor'] }} </br>
-                        Correo: {{ comentario['correo'] }} </br>
-                        Hora: {{ comentario['hora'] }} </br>
-                        Comentario: {{ comentario['texto'] }} </br>
-                    </div>
+                        {% set contador = loop.index %}
+                        <div class="comment">
+                            Autor: {{ comentario['autor'] }} </br>
+                            Correo: {{ comentario['correo'] }} </br>
+                            Hora: {{ comentario['hora'] }} </br>
+                            Comentario: <p class="comentario" id="{{ contador }}"> {{ comentario['texto'] }} </p> </br>
+                            {% if modder %}
+                                <button class="boton_editar_comentario" onclick="editarComentario(this.getAttribute('data-contador'))" data-contador="{{ contador }}"> Editar </button>
+                            {% endif %}
+                        </div>
                     {% endfor %}
 
                 {% endblock %}
