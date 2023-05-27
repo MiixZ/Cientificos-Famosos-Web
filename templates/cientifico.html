@@ -4,15 +4,28 @@
         <title>Científico</title>
         <link rel="stylesheet" href="./css/cientifico.css"/> <!-- Con esto decimos el archivo css
                  que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     {% endblock %}
 
     {% block main %}
     <div id="palabrasProhibidas" data-twig="{{ palabras_censuradas|json_encode|raw }}"> {{ palabras_censuradas|json_encode|raw }} </div>
     <section class="seccion_cientificos">
         <section class="texto_cientifico">
-            <h1>    {{ cientifico['nombre'] }}    </h1>
+            <h1>    {{ cientifico['nombre'] }}</h1>
             <h2>    {{ cientifico['fechas'] }}       </h2>
             <h3>    {{ cientifico['ciudad'] }}    </h3>
+
+            {% if gestor %}
+                <div class="botones_edicion_eliminar">
+                    <a href="./eliminarCientifico.php?id={{ cientifico['idc'] }}">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+
+                    <a href="./gestorPage.php?id={{ cientifico['idc'] }}">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </div>
+            {% endif %}
 
             <p class="biografia">
                 {{ cientifico['texto'] }}

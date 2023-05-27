@@ -7,13 +7,14 @@
 
     session_start();        // Los datos se guardan en $_SESSION. Por ejemplo $_SESSION['count'];
 
-    if (!isset($_SESSION['registrado']) || !isset($_SESSION['username'])) {
-        $_SESSION['registrado'] = false;
-        $_SESSION['username'] = "Anónimo";
-        $_SESSION['correo'] = "";
+    if (!isset($_SESSION['registrado'])) {
+        header("Location: index.php");
     }
 
-    $comentarios = getComentarios();
+    if(isset($_GET['id']) && esGestor($_SESSION['username'])) {
+        $id_cientifico = $_GET['id'];
 
-    echo $twig->render('editComent.html', ['registrado' => $_SESSION['registrado'], 'username' => $_SESSION['username'],
-        'comentarios' => $comentarios]);
+        eliminarCientifico($id_cientifico);
+    }
+
+    header("Location: index.php");

@@ -18,6 +18,19 @@
         }
     }
 
+    function eliminarCientifico($idCientifico) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("DELETE FROM cientifico WHERE id = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("i", $idCientifico);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+    }
+
     function getCientifico($id) {
         conectarBD();
         global $mysqli;

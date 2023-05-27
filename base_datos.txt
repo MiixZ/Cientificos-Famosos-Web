@@ -27,28 +27,25 @@ INSERT INTO cientifico (id, nombre, fechas, ciudad, fotoprimaria, texto) VALUES 
 CREATE TABLE comentario (
 	id INT PRIMARY KEY,
 	idCientifico INT,
-	FOREIGN KEY (idCientifico) REFERENCES cientifico(id), 
+	FOREIGN KEY (idCientifico) REFERENCES cientifico(id) ON DELETE CASCADE,
 	autor VARCHAR(100),
 	correo VARCHAR(100),
 	hora VARCHAR(100),
 	texto VARCHAR(5000)
 );
 
-// TESLA
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (1, 1, 'Aitor Ruibal', '02/11/1969', '21:13', 
 '¡Esta página te muestra todo sobre los científico favoritos de la mayoría!');
 
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (2, 1, 'Borja Iglesias', '03/02/1970', '05:23', 
 'Aún se puede mejorar algo más... ¡No dice nada de sus vidas!');
 
-// ROSALIND
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (3, 2, 'Joaquín Sánchez', '02/11/2006', '21:13', 
 '¡Esta página te muestra todo sobre los científico favoritos de la mayoría!');
 
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (4, 2, 'McLovin', '03/02/2023', '23:23', 
 'Expléndido.');
 
-// EINSTEIN
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (5, 3, 'Claudio Bravo', '02/11/2016', '21:13', 
 '¡El mejor científico de todos!');
 
@@ -61,21 +58,18 @@ INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (7,
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (8, 3, 'McLovin', '03/02/2023', '23:23', 
 'Este tipo le sabe.');
 
-// MAXWELL
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (9, 4, 'Ayoze Pérez', '02/01/2007', '00:13', 
 '¡Majestuoso! ¡Un ser humano brillante!');
 
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (10, 4, 'Sabaly', '13/02/2023', '23:23', 
 'Expléndido.');
 
-// Boltzmann
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (11, 5, 'Antonella', '02/01/2007', '00:13', 
 'Me encanta leer acerca de él.');
 
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (12, 5, 'Lionel Andrés Messi Poccitinni', '14/02/2023', '23:23', 
 'A mí me han enviado aquí.');
 
-// Marie Curie
 INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (13, 6, 'Eduardo Camavinga', '02/01/2017', '12:13', 
 'Un gran avance en cuanto al feminismo en la ciencia, ha aportado mucho.');
 
@@ -83,7 +77,7 @@ INSERT INTO comentario (id, idCientifico, autor, correo, hora, texto) VALUES (13
 // FOTOS
 CREATE TABLE fotos(
 	idCientifico INT,
-	FOREIGN KEY (idCientifico) REFERENCES cientifico(id),
+	FOREIGN KEY (idCientifico) REFERENCES cientifico(id) ON DELETE CASCADE,
 	ruta VARCHAR(100)
 );
 

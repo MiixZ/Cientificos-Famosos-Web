@@ -40,5 +40,6 @@
                        'registrado' => $_SESSION['registrado'],
                         'username' => $_SESSION['username'],
                         'correo' => $_SESSION['correo'],
-                        'modder' => $_SESSION['modder']]);
+                        'modder' => $_SESSION['modder'],
+                        'gestor' => esGestor($_SESSION['username'])]);
 ?>

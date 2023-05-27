@@ -213,6 +213,14 @@ html {
     align-content: space-between;
 }
 
+.botones_edicion_eliminar {
+    padding-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
 .boton_eliminar_comentario {
     color: red;
     font-size: 15px;
