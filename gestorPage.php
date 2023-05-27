@@ -16,6 +16,13 @@
         }
 
         $id = $_GET['id'];
+
+        if(isset($_FILES['imagen'])) {
+            $nombreimagen = $_FILES['imagen']['name'];
+            move_uploaded_file($_FILES['imagen']['tmp_name'], "./img/" . $nombreimagen);
+            $nombreimagen = "./img/" . $nombreimagen;
+            insertarFoto($id, $nombreimagen);
+        }
     } else if(isset($_POST['nombre'])) {
         $id = $_GET['id'];
         $cientifico = getCientifico($id);
@@ -29,4 +36,5 @@
         header("Location: index.php");
     }
 
-    echo $twig->render('gestorPage.html', ['cientifico' => getCientifico($id)]);
+    echo $twig->render('gestorPage.html', ['cientifico' => getCientifico($id),
+                                                'fotos' => getFotos($id)]);

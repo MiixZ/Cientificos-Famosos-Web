@@ -5,6 +5,7 @@
     <title>Editar cientifico</title>
     <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
                             que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 {% endblock %}
 
 {% block main %}
@@ -35,4 +36,22 @@
             <input class="guardar_datos" type="submit" value="Guardar cambios">
         </div>
     </form>
+
+    <form class="subir_imagenes_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post" enctype="multipart/form-data">
+        <div class="subir_imagenes">
+            <label for="imagen">Imagen a subir</label>
+            <input type="file" id="imagen" name="imagen">
+            <input type="submit" value="Subir imagen" name="submit">
+        </div>
+    </form>
+
+    {% for foto in fotos %}
+        <img class="imagen" src="{{ foto['ruta'] }}" alt="Imagen de {{ cientifico['nombre'] }}">
+
+        <div class="botones_edicion_eliminar">
+            <a href="./eliminarFoto.php?id={{ cientifico['idc'] }}&ruta={{ foto['ruta'] }}">
+                <i class="fas fa-trash-alt"></i>
+            </a>
+        </div>
+    {% endfor %}
 {% endblock %}

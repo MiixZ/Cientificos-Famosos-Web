@@ -44,6 +44,19 @@
         $stmt->execute();
     }
 
+    function insertarFoto($id, $ruta) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("INSERT INTO fotos (idCientifico, ruta) VALUES (?, ?)");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("is", $id, $ruta);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+    }
+
     function getCientifico($id) {
         conectarBD();
         global $mysqli;
@@ -95,6 +108,19 @@
         }
 
         return $cientificos;
+    }
+
+    function eliminarFoto($idCientifico, $ruta) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("DELETE FROM fotos WHERE idCientifico = ? AND ruta = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("is", $idCientifico, $ruta);
+
+        // Ejecutar la consulta
+        $stmt->execute();
     }
 
     function registrarComentario($autor, $idC, $fecha, $hora, $texto) {

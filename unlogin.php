@@ -7,6 +7,7 @@
         $_SESSION['correo'] = "";
         $_SESSION['modder'] = false;
         $_SESSION['gestor'] = false;
+        session_destroy();
     }
 
     header("Location: index.php");
