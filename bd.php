@@ -46,6 +46,21 @@
         return $cientifico;
     }
 
+    function registrarComentario($autor, $idC, $fecha, $hora, $texto) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("INSERT INTO comentario (id, autor, idCientifico, correo, hora, texto) VALUES (?, ?, ?, ?, ?, ?)");
+
+        $id = rand(13, 1000000);
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("isisss", $id, $autor, $idC, $fecha, $hora, $texto);
+
+        $stmt->execute();
+
+        return true;
+    }
+
     function getComentarios() {
         conectarBD();
         global $mysqli;

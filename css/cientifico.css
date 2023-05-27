@@ -204,7 +204,7 @@ html {
     display: none;
 }
 
-#poner_comentario {
+.poner_comentario {
     display: flex;
     flex-direction: column;
     font-family: "Calibri Light", serif;
@@ -248,7 +248,25 @@ html {
 }
 
 #boton_enviar {
+    font-family: "Comic Sans MS", serif;
+    font-size: 15px;
+    padding: 0.5%;
+    border-radius: 200px;
+    border-style: solid;
+    border-color: orange;
+    text-align: center;
+    width: 10%;
     margin-top: 0.5%;
+}
+
+#mail {
+    width: 30%;
+    height: 2rem;
+}
+
+#name {
+    width: 30%;
+    height: 2rem;
 }
 
 /* ----------------------- PIE PÁGINA -------------------------------- */
