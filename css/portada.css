@@ -163,6 +163,27 @@ html {
     font-size: 18px;
 }
 
+/* Botón para editar comentarios centrado en la sección */
+#editar_comentario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: orange 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    width: 100%;
+}
+
+#editar_comentario:hover {
+    background-color: white;
+    color: orange;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+}
+
 /* ----------------------- PIE PÁGINA -------------------------------- */
 
 .pie_pagina {

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="./css/portada.css"/> <!-- Con esto decimos el archivo css
             que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
     {% endblock %}
-    
+
     {% block main %}
 
     <section class="seccion_cientificos">
@@ -38,7 +38,7 @@
         </div>
 
         {% if modder %}
-            <a href="./editComent.php"> Editar comentarios </a>
+            <a id="editar_comentario" href="./editComent.php"> Editar comentarios </a>
         {% endif %}
     </section>
     {% endblock %}
