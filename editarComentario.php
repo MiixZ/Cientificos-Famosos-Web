@@ -24,7 +24,7 @@
             header("Location: cientifico.php?id=$idCientifico");
     }
 
-    if(isset($_POST['texto_nuevo'])) {
+    if(isset($_POST['texto_nuevo']) && !isset($_POST['eliminar'])) {
         $texto_nuevo = $_POST['texto_nuevo'];
         $texto_viejo = $_POST['texto_viejo'];
         $idCientifico = $_POST['idc'];

@@ -28,6 +28,7 @@
             $_SESSION['registrado'] = true;
             $_SESSION['correo'] = getCorreo($username);
             $_SESSION['modder'] = esModder($username);
+            $_SESSION['gestor'] = esGestor($username);
             header("Location: index.php");
         }
     }

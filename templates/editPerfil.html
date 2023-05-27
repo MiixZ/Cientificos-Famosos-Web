@@ -8,29 +8,29 @@
     {% endblock %}
 
     {% block main %}
-    <h1 class="titulo">Edita tu perfil, {{ username }}</h1>
+        <h1 class="titulo">Edita tu perfil, {{ username }}</h1>
 
-    <form class="editar_perfil" action="./editPerfil.php" method="post">
-        <div class="datos">
-            <div class="datos_">
-                <label for="username_edit" class="labels">Nombre de usuario</label>
-                <input type="text" id="username_edit" name="username" placeholder="{{ username }}" required>
+        <form class="editar_perfil" action="./editPerfil.php" method="post">
+            <div class="datos">
+                <div class="datos_">
+                    <label for="username_edit" class="labels">Nombre de usuario</label>
+                    <input type="text" id="username_edit" name="username" placeholder="{{ username }}" required>
+                </div>
+
+                <div class="datos_">
+                    <label for="email_edit" class="labels">E-mail</label>
+                    <input type="email" id="email_edit" name="email" placeholder="{{ correo }}" required>
+                </div>
+
+                <div class="datos_">
+                    <label for="password_edit" class="labels">Contraseña</label>
+                    <input type="password" id="password_edit" name="password" value="" required>
+                </div>
             </div>
 
-            <div class="datos_">
-                <label for="email_edit" class="labels">E-mail</label>
-                <input type="email" id="email_edit" name="email" placeholder="{{ correo }}" required>
+            <div class="botones">
+                <input class="boton" type="submit" value="Guardar cambios">
+                <input class="boton" type="reset" value="Cancelar">
             </div>
-
-            <div class="datos_">
-                <label for="password_edit" class="labels">Contraseña</label>
-                <input type="password" id="password_edit" name="password" value="" required>
-            </div>
-        </div>
-
-        <div class="botones">
-            <input class="boton" type="submit" value="Guardar cambios">
-            <input class="boton" type="reset" value="Cancelar">
-        </div>
-    </form>
+        </form>
     {% endblock %}

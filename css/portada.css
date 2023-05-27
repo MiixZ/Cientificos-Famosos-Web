@@ -23,6 +23,13 @@ html {
     align-items: center;
 }
 
+.botones_edicion_eliminar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+
 .texto_cabecera {
     display: flex;
     align-content: center;

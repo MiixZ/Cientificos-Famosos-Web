@@ -46,6 +46,31 @@
         return $cientifico;
     }
 
+    function getCientificos() {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id, nombre, fechas, ciudad, texto, fotoprimaria FROM cientifico");
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('idc' => $row['id'], 'nombre' => $row['nombre'], 'fechas' => $row['fechas'],
+                                           'ciudad' => $row['ciudad'], 'texto' => $row['texto'], 'fotoprimaria' => $row['fotoprimaria']);
+                }
+            }
+        }
+
+        return $cientificos;
+    }
+
     function registrarComentario($autor, $idC, $fecha, $hora, $texto) {
         conectarBD();
         global $mysqli;
@@ -302,5 +327,30 @@
         }
 
         return $es_modder;
+    }
+
+    function esGestor($username) {
+        conectarBD();
+        global $mysqli;
+        $es_gestor = false;
+
+        $stmt = $mysqli->prepare("SELECT gestor FROM usuario WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+                $es_gestor = $row['gestor'];
+            }
+        }
+
+        return $es_gestor;
     }
 ?>
