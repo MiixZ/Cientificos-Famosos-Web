@@ -6,6 +6,7 @@
         $_SESSION['username'] = "Anónimo";
         $_SESSION['correo'] = "";
         $_SESSION['modder'] = false;
+        $_SESSION['gestor'] = false;
     }
 
     header("Location: index.php");

@@ -1,0 +1,38 @@
+{% extends "header_footer.html" %}
+
+{% block especificar_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar cientifico</title>
+    <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
+                            que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+{% endblock %}
+
+{% block main %}
+    <h1 class="titulo"> EDITA A {{ cientifico['nombre'] }}</h1>
+
+    <form class="editar_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post">
+        <div class="datos">
+            <div class="datos_">
+                <label for="nombre_edit" class="labels">Nombre</label>
+                <input type="text" id="nombre_edit" name="nombre" value="{{ cientifico['nombre'] }}" required>
+            </div>
+
+            <div class="datos_">
+                <label for="fechas_edit" class="labels">Fechas</label>
+                <input type="text" id="fechas_edit" name="fechas" value="{{ cientifico['fechas'] }}" required>
+            </div>
+
+            <div class="datos_">
+                <label for="ciudad" class="labels">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" value="{{ cientifico['ciudad'] }}" required>
+            </div>
+
+            <div class="datos_">
+                <label for="texto" class="labels">Texto</label>
+                <input type="text" id="texto" name="texto" value="{{ cientifico['texto'] }}" required>
+            </div>
+
+            <input class="guardar_datos" type="submit" value="Guardar cambios">
+        </div>
+    </form>
+{% endblock %}

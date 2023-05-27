@@ -31,6 +31,19 @@
         $stmt->execute();
     }
 
+    function updateCientifico($nombre_nuevo, $fechas_nuevas, $ciudad_nueva, $texto_nuevo, $id) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("UPDATE cientifico SET nombre = ?, fechas = ?, ciudad = ?, texto = ? WHERE id = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("ssssi", $nombre_nuevo, $fechas_nuevas, $ciudad_nueva, $texto_nuevo, $id);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+    }
+
     function getCientifico($id) {
         conectarBD();
         global $mysqli;

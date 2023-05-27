@@ -7,28 +7,26 @@
 
     session_start();
 
-    if(!isset($_SESSION['registrado'])) {
+    if(!isset($_SESSION['registrado']) || !$_SESSION['registrado'] || !isset($_SESSION['gestor'])) {
         header("Location: index.php");
-    }
-
-    if(isset($_POST['username']) && isset($_SESSION['registrado'])) {
-        $nuevo_username = $_POST['username'];
-        $nuevo_correo = $_POST['email'];
-        $nueva_password = $_POST['password'];
-        $antiguo_username = $_SESSION['username'];
-
-        editarUsernameCorreoPassword($nuevo_username, $nuevo_correo, $nueva_password, $antiguo_username);
-        $_SESSION['username'] = $nuevo_username;
-        header("Location: index.php");
-    }
-
-    if(!isset($_SESSION['registrado']) || !$_SESSION['registrado']) {
-        header("Location: index.php");
-    } else {
+    } else if(isset($_GET['id']) && !isset($_POST['nombre'])) {
         // Hay que permitir que el usuario pueda cambiar su nombre de usuario y su correo.
-        $username = $_SESSION['username'];
-        $correo = getCorreo($username);
+        if(!is_numeric($_GET['id'])) {
+            header("Location: index.php");
+        }
+
+        $id = $_GET['id'];
+    } else if(isset($_POST['nombre'])) {
+        $id = $_GET['id'];
+        $cientifico = getCientifico($id);
+
+        $nombre = $_POST['nombre'];
+        $fechas = $_POST['fechas'];
+        $texto = $_POST['texto'];
+        $ciudad = $_POST['ciudad'];
+        updateCientifico($nombre, $fechas, $ciudad, $texto, $id);
+    } else {
+        header("Location: index.php");
     }
 
-    echo $twig->render('editPerfil.html', ['correo' => $correo, 'username' => $username]);
-?>
+    echo $twig->render('gestorPage.html', ['cientifico' => getCientifico($id)]);
