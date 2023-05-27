@@ -213,6 +213,28 @@ html {
     align-content: space-between;
 }
 
+.boton_eliminar_comentario {
+    color: red;
+    font-size: 15px;
+    font-family: "Comic Sans MS", serif;
+}
+
+.boton_eliminar_comentario:hover {
+    color: cadetblue;
+    background-color: grey;
+}
+
+.boton_editar_comentario {
+    color: blue;
+    font-size: 15px;
+    font-family: "Comic Sans MS", serif;
+}
+
+.boton_editar_comentario:hover {
+    color: cadetblue;
+    background-color: grey;
+}
+
 .comentario {
     display: flex;
     flex-direction: column;

@@ -19,7 +19,15 @@
                     Correo: {{ comentario['correo'] }} </br>
                     Hora: {{ comentario['hora'] }} </br>
                     Comentario: <p class="comentario" id="{{ contador }}"> {{ comentario['texto'] }} </p> </br>
-                    <button class="boton_editar_comentario" onclick="editarComentario(this.getAttribute('data-contador'))" data-contador="{{ contador }}"> Editar </button>
+
+                    <form class="editar_comentario" action="./editarComentario.php" method="post">
+                        <input type="text" name="texto_nuevo" required>
+                        <input type="hidden" name="idc" value="{{ comentario['idCientifico'] }}">
+                        <input type="hidden" name="tipo_pagina" value="1">
+                        <input type="hidden" name="texto_viejo" value="{{ comentario['texto'] }}">
+                        <button type="submit" class="boton_editar_comentario"> Editar </button>
+                        <button type="submit" name="eliminar" class="boton_eliminar_comentario"> Eliminar </button>
+                    </form>
                 </div>
             {% endfor %}
         </div>

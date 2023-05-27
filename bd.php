@@ -61,6 +61,36 @@
         return true;
     }
 
+    function editComentario($textoNuevo, $textoViejo, $id) {
+        conectarBD();
+        global $mysqli;
+
+        $textoNuevo = $textoNuevo." (editado por administrador)";
+
+        $stmt = $mysqli->prepare("UPDATE comentario SET texto=? WHERE texto=? AND idCientifico=?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("ssi", $textoNuevo, $textoViejo, $id);
+
+        $stmt->execute();
+
+        return true;
+    }
+
+    function eliminarComentario($texto, $idCientifico) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("DELETE FROM comentario WHERE texto=? AND idCientifico=?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("si", $texto, $idCientifico);
+
+        $stmt->execute();
+
+        return true;
+    }
+
     function getComentarios() {
         conectarBD();
         global $mysqli;

@@ -302,6 +302,30 @@ html {
     padding-bottom: 4%;
 }
 
+.boton_editar_comentario {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 60%;
+}
+
+.boton_eliminar_comentario {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 60%;
+}
+
 .comentarios {
     align-items: center;
 }
