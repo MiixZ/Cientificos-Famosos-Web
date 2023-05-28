@@ -18,6 +18,23 @@
         }
     }
 
+    function insertarCientifico($nombre, $fechas, $ciudad, $texto, $imagen) {
+        conectarBD();
+        global $mysqli;
+
+        $id = rand(10, 1000000);
+
+        $stmt = $mysqli->prepare("INSERT INTO cientifico (id, nombre, fechas, ciudad, texto, fotoprimaria) VALUES ($id, ?, ?, ?, ?, ?)");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("sssss", $nombre, $fechas, $ciudad, $texto, $imagen);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        insertarFoto($id, $imagen);
+    }
+
     function eliminarCientifico($idCientifico) {
         conectarBD();
         global $mysqli;

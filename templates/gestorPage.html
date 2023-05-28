@@ -11,39 +11,42 @@
 {% block main %}
     <h1 class="titulo"> EDITA A {{ cientifico['nombre'] }}</h1>
 
-    <form class="editar_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post">
-        <div class="datos">
-            <div class="datos_">
-                <label for="nombre_edit" class="labels">Nombre</label>
-                <input type="text" id="nombre_edit" name="nombre" value="{{ cientifico['nombre'] }}" required>
+    <div class="formularios">
+
+        <form class="editar_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post">
+            <div class="datos">
+                <div class="datos_">
+                    <label for="nombre_edit" class="labels">Nombre</label>
+                    <input type="text" id="nombre_edit" name="nombre" value="{{ cientifico['nombre'] }}" required>
+                </div>
+
+                <div class="datos_">
+                    <label for="fechas_edit" class="labels">Fechas</label>
+                    <input type="text" id="fechas_edit" name="fechas" value="{{ cientifico['fechas'] }}" required>
+                </div>
+
+                <div class="datos_">
+                    <label for="ciudad" class="labels">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" value="{{ cientifico['ciudad'] }}" required>
+                </div>
+
+                <div class="datos_">
+                    <label for="texto" class="labels">Texto</label>
+                    <input type="text" id="texto" name="texto" value="{{ cientifico['texto'] }}" required>
+                </div>
+
+                <input class="guardar_datos" type="submit" value="Guardar cambios">
             </div>
+        </form>
 
-            <div class="datos_">
-                <label for="fechas_edit" class="labels">Fechas</label>
-                <input type="text" id="fechas_edit" name="fechas" value="{{ cientifico['fechas'] }}" required>
+        <form class="subir_imagenes_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post" enctype="multipart/form-data">
+            <div class="subir_imagenes">
+                <label id="label_imagen" for="imagen">Imagen a subir</label>
+                <input type="file" id="imagen" name="imagen">
+                <input id="subir_imagen" type="submit" value="Subir imagen" name="submit">
             </div>
-
-            <div class="datos_">
-                <label for="ciudad" class="labels">Ciudad</label>
-                <input type="text" id="ciudad" name="ciudad" value="{{ cientifico['ciudad'] }}" required>
-            </div>
-
-            <div class="datos_">
-                <label for="texto" class="labels">Texto</label>
-                <input type="text" id="texto" name="texto" value="{{ cientifico['texto'] }}" required>
-            </div>
-
-            <input class="guardar_datos" type="submit" value="Guardar cambios">
-        </div>
-    </form>
-
-    <form class="subir_imagenes_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post" enctype="multipart/form-data">
-        <div class="subir_imagenes">
-            <label for="imagen">Imagen a subir</label>
-            <input type="file" id="imagen" name="imagen">
-            <input type="submit" value="Subir imagen" name="submit">
-        </div>
-    </form>
+        </form>
+    </div>
 
     {% for foto in fotos %}
         <img class="imagen" src="{{ foto['ruta'] }}" alt="Imagen de {{ cientifico['nombre'] }}">

@@ -1,0 +1,41 @@
+{% extends "header_footer.html" %}
+
+    {% block especificar_head %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Añadir científico</title>
+        <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
+                                que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+    {% endblock %}
+
+    {% block main %}
+        <h1 class="titulo"> Interpon los datos del nuevo científico. </h1>
+
+        <form class="aniadirCientifico" action="./aniadirCientifico.php" method="post" enctype="multipart/form-data">
+            <div class="nuevo_dato">
+                <label for="nombre" class="labels_">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </div>
+
+            <div class="nuevo_dato">
+                <label for="fechas" class="labels_">Fechas</label>
+                <input type="text" id="fechas" name="fechas" placeholder="Fechas Nacimiento y Muerte" required>
+            </div>
+
+            <div class="nuevo_dato">
+                <label for="ciudad" class="labels_">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+            </div>
+
+            <div class="nuevo_dato">
+                <label for="biografia" class="labels_">Biografía</label>
+                <input type="text" id="biografia" name="biografia" placeholder="Biografia" required>
+            </div>
+
+            <div class="div_subir_imagen">
+                <label id="label_imagen" for="imagen">Imagen primaria</label>
+                <input type="file" id="imagen" name="imagen" required>
+            </div>
+
+            <input id="submit" type="submit" value="Añadir" name="submit">
+        </form>
+    {% endblock %}

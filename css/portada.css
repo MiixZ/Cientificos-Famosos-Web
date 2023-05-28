@@ -3,6 +3,21 @@ html {
     margin: 0.1rem;
 }
 
+/* ----------------------- Añadir científico -------------------------------- */
+
+#añadir_cientifico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: orange 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    width: 100%;
+}
+
 /* ----------------------- CABECERA -------------------------------- */
 
 .cabecera {

@@ -3,6 +3,92 @@ html {
     margin: 0.1rem;
 }
 
+/* ----------------------- Crear Científico -------------------------------- */
+
+.aniadirCientifico {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 5rem;
+    top: 100px;
+}
+
+.nuevo_dato {
+    display: flex;
+    flex-direction: column;
+}
+
+#nombre {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+#fechas {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+#ciudad {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+#biografia {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 90%;
+    background-color: #f1f1f1;
+}
+
+.labels_ {
+    font-family: Bahnschrift Condensed, serif;
+    margin-bottom: 0.5rem;
+}
+
+.div_subir_imagen {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+#submit {
+    background-color: #007eff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 20%;
+    height: 25%;
+}
+
 /* ----------------------- LOGIN -------------------------------- */
 
 .inicio_sesion {
@@ -42,6 +128,11 @@ html {
     width: 90%;
 }
 
+.formularios {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
 .titulo {
     font-family: Bahnschrift Condensed, serif;
     font-size: 1.5rem;
@@ -55,10 +146,43 @@ html {
 }
 
 .subir_imagenes_cientifico {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    height: 50%;
+    background-color: #007eff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 20%;
+    height: 25%;
+}
+
+#label_imagen {
+    font-family: Bahnschrift Condensed, serif;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#imagen {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 50%;
+    background-color: #f1f1f1;
+}
+
+#subir_imagen {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom:  1rem;
+    width: 50%;
+    background-color: #f1f1f1;
 }
 
 .imagen {
@@ -137,7 +261,8 @@ html {
     font-size: 1rem;
     padding: 0.5rem;
     margin-bottom:  1rem;
-    width: 90%;
+    width: 100%;
+    height : 10rem;
     background-color: #f1f1f1;
 }
 
