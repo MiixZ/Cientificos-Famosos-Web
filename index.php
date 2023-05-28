@@ -15,5 +15,6 @@
 
     echo $twig->render('index.html', ['registrado' => $_SESSION['registrado'], 'username' => $_SESSION['username'],
                                             'modder' => esModder($_SESSION['username']), 'cientificos' => getCientificos(),
-                                            'gestor' => esGestor($_SESSION['username']), 'correo' => $_SESSION['correo']]);
+                                            'gestor' => esGestor($_SESSION['username']), 'correo' => $_SESSION['correo'],
+                                            'superuser' => esSuperuser($_SESSION['username'])]);
 ?>

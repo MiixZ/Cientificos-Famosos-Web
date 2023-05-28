@@ -85,7 +85,7 @@
                             Comentario: <p class="comentario" id="{{ contador }}"> {{ comentario['texto'] }} </p> </br>
                             {% if modder %}
                                 <form class="editar_comentario" action="./editarComentario.php" method="post">
-                                    <input type="text" name="texto_nuevo" required>
+                                    <input type="text" name="texto_nuevo">
                                     <input type="hidden" name="idc" value="{{ cientifico['idc'] }}">
                                     <input type="hidden" name="texto_viejo" value="{{ comentario['texto'] }}">
                                     <input type="hidden" name="tipo_pagina" value="2">

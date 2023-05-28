@@ -66,5 +66,9 @@
         {% if gestor %}
             <a id="añadir_cientifico" href="./aniadirCientifico.php"> Añadir científico </a>
         {% endif %}
+
+        {% if superuser %}
+            <a id="editar_usuarios" href="./editarUsuarios.php"> Editar usuarios </a>
+        {% endif %}
     </section>
     {% endblock %}

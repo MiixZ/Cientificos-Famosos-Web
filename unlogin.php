@@ -7,6 +7,7 @@
         $_SESSION['correo'] = "";
         $_SESSION['modder'] = false;
         $_SESSION['gestor'] = false;
+        $_SESSION['super'] = false;
         session_destroy();
     }
 

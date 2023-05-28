@@ -29,6 +29,7 @@
             $_SESSION['correo'] = getCorreo($username);
             $_SESSION['modder'] = esModder($username);
             $_SESSION['gestor'] = esGestor($username);
+            $_SESSION['super'] = esSuperUser($username);
             header("Location: index.php");
         }
     }

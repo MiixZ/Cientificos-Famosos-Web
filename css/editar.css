@@ -3,6 +3,24 @@ html {
     margin: 0.1rem;
 }
 
+/* ----------------------- Editar usuarios -------------------------------- */
+
+.editar_usuarios {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ----------------------- Crear Científico -------------------------------- */
 
 .aniadirCientifico {
@@ -529,7 +547,7 @@ html {
     margin-right: 2rem;
     font-size: 1rem;
     padding: 0.5rem;
-    width: 60%;
+    width: 20%;
 }
 
 .boton_eliminar_comentario {
@@ -541,7 +559,7 @@ html {
     margin-right: 2rem;
     font-size: 1rem;
     padding: 0.5rem;
-    width: 60%;
+    width: 20%;
 }
 
 .editar_cientifico {

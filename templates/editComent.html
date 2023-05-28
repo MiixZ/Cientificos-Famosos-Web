@@ -21,7 +21,7 @@
                     Comentario: <p class="comentario" id="{{ contador }}"> {{ comentario['texto'] }} </p> </br>
 
                     <form class="editar_comentario" action="./editarComentario.php" method="post">
-                        <input type="text" name="texto_nuevo" required>
+                        <input type="text" name="texto_nuevo" >
                         <input type="hidden" name="idc" value="{{ comentario['idCientifico'] }}">
                         <input type="hidden" name="tipo_pagina" value="1">
                         <input type="hidden" name="texto_viejo" value="{{ comentario['texto'] }}">

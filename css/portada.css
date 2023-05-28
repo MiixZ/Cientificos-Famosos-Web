@@ -3,6 +3,26 @@ html {
     margin: 0.1rem;
 }
 
+#editar_usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: orange 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    width: 100%;
+}
+
+#editar_usuarios:hover {
+    background-color: white;
+    color: orange;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+}
+
 /* ----------------------- Añadir científico -------------------------------- */
 
 #añadir_cientifico {
@@ -16,6 +36,13 @@ html {
     font-family: "Comic Sans MS", cursive;
     font-size: 18px;
     width: 100%;
+}
+
+#añadir_cientifico:hover {
+    background-color: white;
+    color: orange;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
 }
 
 /* ----------------------- CABECERA -------------------------------- */

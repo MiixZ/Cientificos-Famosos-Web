@@ -422,4 +422,132 @@
 
         return $es_gestor;
     }
+
+    function esSuperUser($username) {
+        conectarBD();
+        global $mysqli;
+        $es_superuser = false;
+
+        $stmt = $mysqli->prepare("SELECT superuser FROM usuario WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+                $es_superuser = $row['superuser'];
+            }
+        }
+
+        if($es_superuser) {
+            hacerGestor($username);
+            hacerModder($username);
+        }
+
+        return $es_superuser;
+    }
+
+    function hacerGestor($username) {
+        conectarBD();
+        global $mysqli;
+        $ha_hecho_gestor = false;
+
+        $stmt = $mysqli->prepare("UPDATE usuario SET gestor = 1 WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_hecho_gestor = true;
+
+        return $ha_hecho_gestor;
+    }
+
+    function hacerModder($username) {
+        conectarBD();
+        global $mysqli;
+        $ha_hecho_modder = false;
+
+        $stmt = $mysqli->prepare("UPDATE usuario SET moderador = 1 WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_hecho_modder = true;
+
+        return $ha_hecho_modder;
+    }
+
+    function quitarTodosPermisos($username) {
+        conectarBD();
+        global $mysqli;
+        $ha_quitado_permisos = false;
+
+        $stmt = $mysqli->prepare("UPDATE usuario SET moderador = 0, gestor = 0, superuser = 0 WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_quitado_permisos = true;
+
+        return $ha_quitado_permisos;
+    }
+
+    function hacerSuperUser($username) {
+        conectarBD();
+        global $mysqli;
+        $ha_hecho_superuser = false;
+
+        hacerGestor($username);
+        hacerModder($username);
+
+        $stmt = $mysqli->prepare("UPDATE usuario SET superuser = 1 WHERE nombre_usuario = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("s", $username);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_hecho_superuser = true;
+
+        return $ha_hecho_superuser;
+    }
+
+    function getUsuarios() {
+        conectarBD();
+        global $mysqli;
+        $usuarios = array();
+
+        $stmt = $mysqli->prepare("SELECT nombre_usuario, correo, moderador, gestor, superuser FROM usuario");
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $usuarios[] = $row;
+                }
+            }
+        }
+
+        return $usuarios;
+    }
 ?>

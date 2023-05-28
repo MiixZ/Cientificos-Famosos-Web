@@ -1,0 +1,50 @@
+{% extends "header_footer.html" %}
+
+  {% block especificar_head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar perfil</title>
+    <link rel="stylesheet" href="./css/editar.css"/> <!-- Con esto decimos el archivo css
+                            que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
+  {% endblock %}
+
+  {% block main %}
+    <h1 class="titulo">Cambia los permisos de los usuarios.</h1>
+
+    {% for usuario in usuarios %}
+      {% if nombre_actual != usuario['nombre_usuario'] %}
+        <h2 class="titulo"> {{ usuario['nombre_usuario'] }} </h2>
+
+        {% if usuario['moderador'] == 1 and usuario['superuser'] != 1 %}
+          <h3 class="titulo"> Es un moderador. </h3>
+        {% endif %}
+
+        {% if usuario['gestor'] == 1 and usuario['superuser'] != 1 %}
+          <h3 class="titulo"> Es un gestor. </h3>
+        {% endif %}
+
+        {% if usuario['superuser'] == 1 %}
+          <h3 class="titulo"> Es un superusuario. </h3>
+        {% endif %}
+
+        {% if usuario['superuser'] != 1 and usuario['moderador'] != 1 and usuario['gestor'] != 1 %}
+            <h3 class="titulo"> Es un usuario registrado. </h3>
+        {% endif %}
+
+        <form class="editar_usuarios" action="./editarUsuarios.php?nombre={{ usuario['nombre_usuario'] }}" method="post">
+            <label for="opcion1" class="labels"> Usuario registrado </label>
+            <input type="radio" class="opciones" id="opcion1" name="opcion" value="opcion1">
+
+            <label for="opcion2" class="labels"> Moderador </label>
+            <input type="radio" class="opciones" id="opcion2" name="opcion" value="opcion2">
+
+            <label for="opcion3" class="labels"> Gestor </label>
+            <input type="radio" class="opciones" id="opcion3" name="opcion" value="opcion3">
+
+            <label for="opcion4" class="labels"> SuperUsuario </label>
+            <input type="radio" class="opciones" id="opcion4" name="opcion" value="opcion4">
+
+            <input type="submit" class="boton" value="Guardar cambios">
+        </form>
+      {% endif %}
+    {% endfor %}
+  {% endblock %}
