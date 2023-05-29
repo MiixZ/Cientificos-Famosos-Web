@@ -31,6 +31,12 @@
                 {{ cientifico['texto'] }}
             </p>
 
+            <p id="hashtags">
+                {% for hashtag in hashtags %}
+                    <a> {{ hashtag['hashtag'] }} </a>
+                {% endfor %}
+            </p>
+
             <section class="buttons">
                 <button> <a class="text_button" href="./cientifico_imprimir.php?id={{ cientifico['idc'] }}"> FB </a> </button>
                 <button> <a class="text_button" href="./cientifico_imprimir.php?id={{ cientifico['idc'] }}"> TW </a> </button>

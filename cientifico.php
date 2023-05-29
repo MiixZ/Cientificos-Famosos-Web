@@ -29,6 +29,8 @@
 
     $palabras_censuradas = getPalabras();
 
+    $hashtags = getHashtags($id_cientifico);
+
     if(!isset($_SESSION['modder'])) {
         $_SESSION['modder'] = false;
     }
@@ -40,6 +42,7 @@
                        'registrado' => $_SESSION['registrado'],
                         'username' => $_SESSION['username'],
                         'correo' => $_SESSION['correo'],
+                        'hashtags' => $hashtags,
                         'modder' => $_SESSION['modder'],
                         'gestor' => esGestor($_SESSION['username'])]);
 ?>

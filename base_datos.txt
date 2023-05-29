@@ -132,6 +132,30 @@ INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superu
 
 INSERT INTO usuario (nombre_usuario, password, correo, moderador, gestor, superuser) VALUES ('super', 'super', 'super@super.com', 0, 0, 1);
 
+CREATE TABLE hashtags (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    idCientifico INT,
+    FOREIGN KEY (idCientifico) REFERENCES cientifico(id) ON DELETE CASCADE,
+    hashtag VARCHAR(100)
+);
+
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (1, '#tesla');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (1, '#electricidad');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (1, '#magnetismo');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (2, '#franklin');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (2, '#adn');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (2, '#genetica');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (3, '#einstein');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (3, '#relatividad');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (3, '#fisica');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (4, '#maxwell');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (4, '#electromagnetismo');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (5, '#boltzmann');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (5, '#termodinamica');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (6, '#curie');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (6, '#radiactividad');
+INSERT INTO hashtags (idCientifico, hashtag) VALUES (6, '#quimica');
+
         'balded' : '******',
         'tonto' : '*****',
         'inutil' : '******',

@@ -550,4 +550,30 @@
 
         return $usuarios;
     }
+
+    function getHashtags($id_cientifico) {
+        conectarBD();
+        global $mysqli;
+        $hashtags = array();
+
+        $stmt = $mysqli->prepare("SELECT hashtag FROM hashtags WHERE idCientifico = ?");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("i", $id_cientifico);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if($res !== false) {
+            if($res->num_rows !== false && $res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $hashtags[] = array('hashtag' => $row['hashtag']);
+                }
+            }
+        }
+
+        return $hashtags;
+    }
 ?>
