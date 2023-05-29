@@ -12,7 +12,6 @@
     <h1 class="titulo"> EDITA A {{ cientifico['nombre'] }}</h1>
 
     <div class="formularios">
-
         <form class="editar_cientifico" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post">
             <div class="datos">
                 <div class="datos_">
@@ -47,6 +46,14 @@
             </div>
         </form>
     </div>
+
+    <form class="añadir_hashtags" action="./gestorPage.php?id={{ cientifico['idc'] }}" method="post">
+        <div class="hashtags">
+            <label for="hashtags" class="labels">Añade los hashtags separados por una coma: </label>
+            <input type="text" id="hashtags" name="hashtags" required>
+            <input class="guardar_datos" type="submit" value="Guardar cambios">
+        </div>
+    </form>
 
     {% for foto in fotos %}
         <img class="imagen" src="{{ foto['ruta'] }}" alt="Imagen de {{ cientifico['nombre'] }}">

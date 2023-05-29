@@ -7,6 +7,17 @@
 
     session_start();        // Los datos se guardan en $_SESSION. Por ejemplo $_SESSION['count'];
 
+    if(isset($_POST['busqueda'])) {
+        $nombrecientifico = $_POST['busqueda'];
+        $idc = getIdCientificoByNombre($nombrecientifico);
+
+        if(is_numeric($idc) && $idc != -1) {
+            header("Location: cientifico.php?id=".$idc);
+        } else {
+            header("Location: index.php");
+        }
+    }
+
     if(!isset($_SESSION['registrado']) || !isset($_SESSION['username'])) {
         $_SESSION['registrado'] = false;
         $_SESSION['username'] = "Anónimo";

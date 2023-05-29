@@ -23,6 +23,30 @@ html {
     font-size: 18px;
 }
 
+.form_busqueda {
+    display: flex;
+}
+
+#busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: orange 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    width: 100%;
+}
+
+#busqueda:hover {
+    background-color: white;
+    color: orange;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+}
+
 /* ----------------------- Añadir científico -------------------------------- */
 
 #añadir_cientifico {

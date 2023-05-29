@@ -102,6 +102,33 @@
         return $cientifico;
     }
 
+    function getIdCientificoByNombre($nombre) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id FROM cientifico WHERE nombre = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $nombre);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $id = -1;
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+
+                $id = $row['id'];
+            }
+        }
+
+        return $id;
+    }
+
     function getCientificos() {
         conectarBD();
         global $mysqli;
@@ -575,5 +602,23 @@
         }
 
         return $hashtags;
+    }
+
+    function insertarHashtag($idCientifico, $hashtag) {
+        conectarBD();
+        global $mysqli;
+        $ha_insertado = false;
+
+        $stmt = $mysqli->prepare("INSERT INTO hashtags (idCientifico, hashtag) VALUES (?, ?)");
+
+        // Vincular el valor del parámetro.
+        $stmt->bind_param("is", $idCientifico, $hashtag);
+
+        // Ejecutar la consulta.
+        $stmt->execute();
+
+        $ha_insertado = true;
+
+        return $ha_insertado;
     }
 ?>

@@ -17,6 +17,15 @@
 
         $id = $_GET['id'];
 
+        if(isset($_POST['hashtags'])) {
+            $hashtags = $_POST['hashtags'];
+            $hashtags = explode(",", $hashtags);
+            foreach($hashtags as $hashtag) {
+                echo "boy a insertar hashtags".$hashtag;
+                insertarHashtag($id, $hashtag);
+            }
+        }
+
         if(isset($_FILES['imagen'])) {
             $nombreimagen = $_FILES['imagen']['name'];
             move_uploaded_file($_FILES['imagen']['tmp_name'], "./img/" . $nombreimagen);
