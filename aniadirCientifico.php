@@ -16,9 +16,7 @@
         move_uploaded_file($_FILES['imagen']['tmp_name'], "./img/" . $nombre_imagen);
 
         $nombre_imagen = "./img/" . $nombre_imagen;
-
         insertarCientifico($nombre, $fechas, $ciudad, $biografia, $nombre_imagen);
-
         header("Location: index.php");
     }
 

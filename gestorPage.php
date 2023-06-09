@@ -35,7 +35,6 @@
     } else if(isset($_POST['nombre'])) {
         $id = $_GET['id'];
         $cientifico = getCientifico($id);
-
         $nombre = $_POST['nombre'];
         $fechas = $_POST['fechas'];
         $texto = $_POST['texto'];
@@ -44,6 +43,8 @@
     } else {
         header("Location: index.php");
     }
+
+
 
     echo $twig->render('gestorPage.html', ['cientifico' => getCientifico($id),
                                                 'fotos' => getFotos($id)]);
