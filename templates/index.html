@@ -6,16 +6,18 @@
         <link rel="stylesheet" href="./css/portada.css"/> <!-- Con esto decimos el archivo css
             que va a darle formato. Si quisiéramos un archivo js sería <script src=... defer> </> en vez de link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+        <script src="./js/inicio_sesion.js" defer></script>
     {% endblock %}
 
     {% block main %}
 
     <section class="seccion_cientificos">
         <form class="form_busqueda" action="./index.php" method="post">
-            <input type="text" id="busqueda" name="busqueda" placeholder="Busca un científico por su nombre" required>
+            <input type="text" id="busqueda" name="busqueda" placeholder="Busca un científico por su nombre" oninput="checkCientificos()">
             <input type="submit" value="Buscar">
         </form>
+
+        <div id="resultado"></div>
 
         <!-- Esta es la sección de los científicos, que tendrá dos columnas (en dos divs) de 3 fotos cada una. -->
         <div class="cientificos">

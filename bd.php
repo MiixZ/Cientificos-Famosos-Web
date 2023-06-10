@@ -234,6 +234,137 @@
         return $cientificos;
     }
 
+    function getCientificoPorCoincidenciaNombre($nombreParcial) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id, nombre FROM cientifico WHERE nombre LIKE ?");
+
+        $nombreParcial = "%" . $nombreParcial . "%";
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $nombreParcial);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('id' => $row['id'], 'nombre' => $row['nombre']);
+                }
+            } else {
+                $cientificos = getCientificoByHashtagParcial($nombreParcial);
+            }
+        }
+
+        return $cientificos;
+    }
+
+    function getCientificoPublicadoPorCoincidenciaNombre($nombreParcial) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id, nombre FROM cientifico WHERE nombre LIKE ? AND publicado = 1");
+
+        $nombreParcial = "%" . $nombreParcial . "%";
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $nombreParcial);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if ($res !== false) {
+            if ($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('id' => $row['id'], 'nombre' => $row['nombre']);
+                }
+            } else {
+                $cientificos = getCientificoPublicadoByHashtagParcial($nombreParcial);
+            }
+        }
+
+        return $cientificos;
+    }
+
+    // Esta función cogerá los id de los cientificos en la tabla hashtag que coincidan con el hashtag parcial,
+    // y luego cogerá los cientificos que tengan esos id en la tabla cientifico.
+    function getCientificoByHashtagParcial($hashtagParcial) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT c.id, c.nombre 
+                                  FROM cientifico c
+                                  JOIN hashtags h ON c.id = h.idCientifico
+                                  WHERE h.hashtag LIKE ?");
+
+        $hashtagParcial = "%" . $hashtagParcial . "%";
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $hashtagParcial);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if ($res !== false) {
+            if ($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('id' => $row['id'],
+                        'nombre' => $row['nombre']);
+                }
+            }
+        }
+
+        return $cientificos;
+    }
+
+    // Esta función hará lo mismo que la anterior pero sólo se cogerán los cientificos que estén publicados.
+    function getCientificoPublicadoByHashtagParcial($hashtagParcial) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT c.id, c.nombre 
+                                  FROM cientifico c
+                                  JOIN hashtags h ON c.id = h.idCientifico
+                                  WHERE h.hashtag LIKE ? AND c.publicado = 1");
+
+        $hashtagParcial = "%" . $hashtagParcial . "%";
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $hashtagParcial);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if ($res !== false) {
+            if ($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('id' => $row['id'], 'nombre' => $row['nombre']);
+                }
+            }
+        }
+
+        return $cientificos;
+    }
+
+
     function eliminarFoto($idCientifico, $ruta) {
         conectarBD();
         global $mysqli;

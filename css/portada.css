@@ -16,6 +16,38 @@ html {
     width: 100%;
 }
 
+.enlaceCientificos {
+    display: flex;
+    border: brown 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: black;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.enlaceCientificos:hover {
+    background-color: white;
+    color: orange;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+}
+
+#resultado {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: orange 0.2rem solid;
+    border-radius: 22px;
+    background-color: orange;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    width: 250px;
+    height: 150px;
+}
+
 #editar_usuarios:hover {
     background-color: white;
     color: orange;

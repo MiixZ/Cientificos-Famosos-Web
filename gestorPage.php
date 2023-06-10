@@ -9,9 +9,9 @@
 
     if (!isset($_SESSION['registrado']) || !$_SESSION['registrado'] || !isset($_SESSION['gestor'])) {
         header("Location: index.php");
-    } else if(isset($_GET['id']) && !isset($_POST['nombre'])) {
+    } else if (isset($_GET['id']) && !isset($_POST['nombre'])) {
         // Hay que permitir que el usuario pueda cambiar su nombre de usuario y su correo.
-        if(!is_numeric($_GET['id'])) {
+        if (!is_numeric($_GET['id'])) {
             header("Location: index.php");
         }
 
