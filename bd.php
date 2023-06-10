@@ -104,7 +104,7 @@
         conectarBD();
         global $mysqli;
     
-        $stmt = $mysqli->prepare("SELECT id, nombre, fechas, ciudad, texto FROM cientifico WHERE id = ?");
+        $stmt = $mysqli->prepare("SELECT id, nombre, fechas, ciudad, texto, publicado FROM cientifico WHERE id = ?");
 
         // Vincular el valor del parámetro
         $stmt->bind_param("i", $id);
@@ -114,13 +114,15 @@
 
         $res = $stmt->get_result();
 
-        $cientifico = array('idc' => 'idc', 'nombre' => 'nombre', 'fechas' => 'fechas', 'ciudad' => 'ciudad', 'texto' => 'texto');
+        $cientifico = array('idc' => 'idc', 'nombre' => 'nombre', 'fechas' => 'fechas', 'ciudad' => 'ciudad', 'texto' => 'texto',
+            'publicado' => 'publicado');
     
         if($res !== false) {
             if($res->num_rows > 0) {
                 $row = $res->fetch_assoc();
 
-                $cientifico = array('idc' => $row['id'], 'nombre' => $row['nombre'], 'fechas' => $row['fechas'], 'ciudad' => $row['ciudad'], 'texto' => $row['texto']);
+                $cientifico = array('idc' => $row['id'], 'nombre' => $row['nombre'], 'fechas' => $row['fechas'],
+                    'ciudad' => $row['ciudad'], 'texto' => $row['texto'], 'publicado' => $row['publicado']);
                 echo "<br />";
             }
         }

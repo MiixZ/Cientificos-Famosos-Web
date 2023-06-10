@@ -34,6 +34,11 @@
                     <input type="text" id="texto" name="texto" value="{{ cientifico['texto'] }}" required>
                 </div>
 
+                <div class="datos_">
+                    <label for="publicado" class="labels">¿Está publicado?</label>
+                    <input type="checkbox" id="publicado" name="publicado" {% if cientifico['publicado'] == 1 %} checked {% endif %}>
+                </div>
+
                 <input class="guardar_datos" type="submit" value="Guardar cambios">
             </div>
         </form>
