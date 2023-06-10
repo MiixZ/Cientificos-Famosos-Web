@@ -20,7 +20,7 @@ function checkCientificos() {
         xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 var cientificos = JSON.parse(this.responseText);
-                mostrarResultados(cientificos, busqueda);
+                mostrarResultados(cientificos);
             }
         };
 
@@ -33,16 +33,14 @@ function checkCientificos() {
     }
 }
 
-function mostrarResultados(cientificos, nombre) {
+function mostrarResultados(cientificos) {
     var resultados = [];
 
     var divResultado = document.getElementById("resultado");
     divResultado.innerHTML = "";
 
     for (let i = 0; i < cientificos.length; i++) {
-        if (cientificos[i].nombre.includes(nombre)) {
-            resultados.push(cientificos[i]);
-        }
+        resultados.push(cientificos[i]);
     }
 
     if (resultados.length > 0) {
