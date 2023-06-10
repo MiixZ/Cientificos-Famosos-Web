@@ -20,7 +20,7 @@ function checkCientificos() {
         xhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 var cientificos = JSON.parse(this.responseText);
-                mostrarResultados(cientificos);
+                mostrarResultados(cientificos, busqueda);
             }
         };
 
@@ -33,7 +33,7 @@ function checkCientificos() {
     }
 }
 
-function mostrarResultados(cientificos) {
+function mostrarResultados(cientificos, busqueda) {
     var resultados = [];
 
     var divResultado = document.getElementById("resultado");
@@ -48,8 +48,21 @@ function mostrarResultados(cientificos) {
             var resultado = document.createElement("div");
             var enlace = document.createElement("a");
             enlace.href = "cientifico.php?id=" + resultados[i].id;
-            enlace.textContent = resultados[i].nombre;
-            enlace.className = "enlaceCientificos"; // Añade la clase "enlaceCientificos"
+            enlace.className = "enlaceCientificos";
+
+            var nombreCientifico = resultados[i].nombre;
+            var indiceCoincidencia = nombreCientifico.toLowerCase().indexOf(busqueda.toLowerCase());
+
+            if (indiceCoincidencia !== -1) {
+                var nombreResaltado = nombreCientifico.substring(0, indiceCoincidencia) +
+                    '<span class="resaltado">' + nombreCientifico.substring(indiceCoincidencia, indiceCoincidencia + busqueda.length) + '</span>' +
+                    nombreCientifico.substring(indiceCoincidencia + busqueda.length);
+
+                enlace.innerHTML = nombreResaltado;
+            } else {
+                enlace.textContent = nombreCientifico;
+            }
+
             resultado.appendChild(enlace);
             divResultado.appendChild(resultado);
         }

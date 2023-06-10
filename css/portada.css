@@ -34,6 +34,10 @@ html {
     font-size: 18px;
 }
 
+.resaltado {
+    color: red;
+}
+
 #resultado {
     display: none;
     justify-content: center;
