@@ -21,7 +21,6 @@
             $hashtags = $_POST['hashtags'];
             $hashtags = explode(",", $hashtags);
             foreach($hashtags as $hashtag) {
-                echo "boy a insertar hashtags".$hashtag;
                 insertarHashtag($id, $hashtag);
             }
         }

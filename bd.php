@@ -35,6 +35,32 @@
         insertarFoto($id, $imagen);
     }
 
+    function hacerPublicoCientifico($idCientifico) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("UPDATE cientifico SET publicado = 1 WHERE id = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("i", $idCientifico);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+    }
+
+    function hacerNoPublicoCientifico($idCientifico) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("UPDATE cientifico SET publicado = 0 WHERE id = ?");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("i", $idCientifico);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+    }
+
     function eliminarCientifico($idCientifico) {
         conectarBD();
         global $mysqli;
@@ -129,11 +155,63 @@
         return $id;
     }
 
+    function getIdCientificoByNombreSiPublicado($nombre) {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id FROM cientifico WHERE nombre = ? AND publicado = 1");
+
+        // Vincular el valor del parámetro
+        $stmt->bind_param("s", $nombre);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $id = -1;
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                $row = $res->fetch_assoc();
+
+                $id = $row['id'];
+            }
+        }
+
+        return $id;
+    }
+
     function getCientificos() {
         conectarBD();
         global $mysqli;
 
         $stmt = $mysqli->prepare("SELECT id, nombre, fechas, ciudad, texto, fotoprimaria FROM cientifico");
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        $cientificos = array();
+
+        if($res !== false) {
+            if($res->num_rows > 0) {
+                while($row = $res->fetch_assoc()) {
+                    $cientificos[] = array('idc' => $row['id'], 'nombre' => $row['nombre'], 'fechas' => $row['fechas'],
+                                           'ciudad' => $row['ciudad'], 'texto' => $row['texto'], 'fotoprimaria' => $row['fotoprimaria']);
+                }
+            }
+        }
+
+        return $cientificos;
+    }
+
+    function getCientificosPublicados() {
+        conectarBD();
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("SELECT id, nombre, fechas, ciudad, texto, fotoprimaria FROM cientifico WHERE publicado = 1");
 
         // Ejecutar la consulta
         $stmt->execute();

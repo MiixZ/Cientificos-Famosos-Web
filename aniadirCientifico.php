@@ -13,10 +13,17 @@
         $ciudad = $_POST['ciudad'];
         $biografia = $_POST['biografia'];
         $nombre_imagen = $_FILES['imagen']['name'];
+
         move_uploaded_file($_FILES['imagen']['tmp_name'], "./img/" . $nombre_imagen);
 
         $nombre_imagen = "./img/" . $nombre_imagen;
         insertarCientifico($nombre, $fechas, $ciudad, $biografia, $nombre_imagen);
+
+        if (!isset($_POST['publicado'])) {
+            $idc = getIdCientificoByNombre($nombre);
+            hacerNoPublicoCientifico($idc);
+        }
+
         header("Location: index.php");
     }
 

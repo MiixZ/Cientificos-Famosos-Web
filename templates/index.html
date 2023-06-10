@@ -12,12 +12,11 @@
     {% block main %}
 
     <section class="seccion_cientificos">
-        {% if gestor %}
-            <form class="form_busqueda" action="./index.php" method="post">
-                <input type="text" id="busqueda" name="busqueda" placeholder="Busca un científico por su nombre" required>
-                <input type="submit" value="Buscar">
-            </form>
-        {% endif %}
+        <form class="form_busqueda" action="./index.php" method="post">
+            <input type="text" id="busqueda" name="busqueda" placeholder="Busca un científico por su nombre" required>
+            <input type="submit" value="Buscar">
+        </form>
+
         <!-- Esta es la sección de los científicos, que tendrá dos columnas (en dos divs) de 3 fotos cada una. -->
         <div class="cientificos">
             <!-- Primera columna de científicos. -->
